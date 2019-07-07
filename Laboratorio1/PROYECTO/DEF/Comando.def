@@ -1,0 +1,55 @@
+DEFINITION MODULE Comando;
+(*******************************************************************************
+Módulo de definición del TAD Comando.
+
+Laboratorio de Programación 2.
+InCo-FING-UDELAR
+
+El tipo abstracto Comando se encarga de leer los comandos ingresados desde la
+entrada estándar y devolverlos mediante las funciones selectoras especificadas.
+*******************************************************************************)
+
+CONST
+    MAXNOMCOM     = 15;
+    MAXLARGOPARAM = 257;
+	
+
+TYPE
+    Comando;  (* opaco: definición en el .mod *)
+    NombreComando = ARRAY [0..MAXNOMCOM] OF CHAR;
+    Parametro = ARRAY [0..MAXLARGOPARAM] OF CHAR;
+
+
+(*************  Constructoras ****************)
+
+PROCEDURE LeerComando () : Comando;
+(* Lee una línea completa de la entrada estándar y devuelve un comando
+   a partir de ella. Se supone que los comandos se ingresan correctamente de
+   acuerdo a la siguiente sintáxis:
+        NomComando parametro1 parametro2 ...
+   donde NomComando es el nombre de un comando, los parámetros se separan entre
+   sí y de NomComando por un espacio en blanco y cada uno esta formado por una
+   secuencia de caracteres sin espacios. *)
+
+
+(*************  Selectoras *************)
+
+PROCEDURE ObtenerNombreComando ( com : Comando ) : NombreComando;
+(* Devuelve en 'nombre' el nombre del comando 'com' *)
+
+PROCEDURE ObtenerCantParamComando ( com : Comando ) : CARDINAL;
+(* Devuelve la cantidad de parámetros del comando 'com' *)
+
+PROCEDURE ObtenerParamComando ( num : CARDINAL; com : Comando ) : Parametro;
+(* Precondición: ObtenerCantParamComando(com) >= 'num' >= 1.
+   Devuelve el parámetro que ocupa la posición 'num' del comando 'com'.
+   El primer parámetro se obtiene invocando a este procedimiento
+   con 'num' = 1 *)
+
+
+(************ Destructoras *************)
+
+PROCEDURE DestruirComando ( VAR com : Comando );
+(* Libera la memoria reservada por el comando 'com' *)
+
+END Comando.

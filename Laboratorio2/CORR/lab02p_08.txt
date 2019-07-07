@@ -1,0 +1,54 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>iniciar 20100508
+Fecha 20100508 inicializada.
+>altaCliente 'Mario' 'Fontanes' 1234567 IT
+Cliente 1234567-IT ingresado.
+>altaCliente 'Luigi' 'Fontanes' 7654321 IT
+Cliente 7654321-IT ingresado.
+>altaCliente 'Shigeru' 'Tuyamoto' 1952985 JP
+Cliente 1952985-JP ingresado.
+>altaAvion 19 52 AIRBUSA300
+Avion 0 ingresado.
+>altaAvion 19 85 BOEING747
+Avion 1 ingresado.
+>altaLinea INCO100 0 MVD EZE 1400 60 SEMANAL MARTES
+Linea INCO100 ingresada.
+>altaLinea IMERL100 1 EZE MVD 1600 100 DIARIA
+Linea IMERL100 ingresada.
+>reserva INCO100 20100511 1234567 IT TURISTA 3
+Asiento 3-TURISTA-20100511-INCO100 resevado a 1234567-IT.
+>reserva INCO100 20100512 1234567 IT TURISTA 4
+ERROR: No existe vuelo 20100512-INCO100.
+>compra IMERL100 20100520 1952985 JP EFECTIVO PRIMERA 2
+Asiento 2-PRIMERA-20100520-IMERL100 vendido a 1952985-JP.
+Costo: 200-EFECTIVO. Puntos: 25.
+>cancela INCO100 20100511 1234567 IT TURISTA 3
+Reserva 3-TURISTA-20100511-INCO100-1234567-IT cancelada.
+>cancela INCO100 20100512 1234567 IT TURISTA 4
+ERROR: No existe vuelo 20100512-INCO100.
+>siguienteDia
+Fecha actual 20100509. Reservas liberadas: 0.
+>infoCliente 1234567 IT
+Cliente: 'Mario'-'Fontanes'-1234567-IT-0.
+Movimientos:
+3-TURISTA-20100511-INCO100-CANCELA
+>infoCliente 1952985 JP
+Cliente: 'Shigeru'-'Tuyamoto'-1952985-JP-25.
+Movimientos:
+2-PRIMERA-20100520-IMERL100-COMPRA
+>infoVuelo INCO101 20100420
+ERROR: No existe una linea con identificador INCO101.
+>listarClientes
+Clientes:
+1234567-IT
+7654321-IT
+1952985-JP
+>listarLineas
+Lineas:
+IMERL100
+INCO100
+>salir
+Fin!

@@ -1,0 +1,54 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>Cliente C5046578-IT ingresado.
+>Avion 0 ingresado.
+>Linea MadridEnAvioneta ingresada.
+>Linea: MadridEnAvioneta-0-2-4-Avioneta-MVD-MAD-0745-840-DIARIA.
+>Fecha 20100504 inicializada.
+>Asiento 2-PRIMERA-20100506-MadridEnAvioneta resevado a C5046578-IT.
+>Primera:
+LR
+Turista:
+LLLL
+>Cliente: 'Santiago'-'Dalchiele'-C5046578-IT-0.
+Movimientos:
+2-PRIMERA-20100506-MadridEnAvioneta-RESERVA
+>Fecha actual 20100505. Reservas liberadas: 1.
+>Primera:
+LL
+Turista:
+LLLL
+>ERROR: Cliente C5046578-IT no tiene la reserva 2-PRIMERA-20100506-MadridEnAvioneta.
+>Primera:
+LL
+Turista:
+LLLL
+>ERROR: Comando invalido para la fecha 20100506.
+>Primera:
+LL
+Turista:
+LLLL
+>Asiento 2-TURISTA-20100506-MadridEnAvioneta vendido a C5046578-IT.
+Costo: 1120-EFECTIVO. Puntos: 140.
+>Planilla de Vuelos que Salen Hoy:
+>Fecha actual 20100506. Reservas liberadas: 0.
+>Asiento 3-TURISTA-20100507-MadridEnAvioneta vendido a C5046578-IT.
+Costo: 1120-EFECTIVO. Puntos: 140.
+>Primera:
+LL
+Turista:
+LLCL
+>Fecha actual 20100507. Reservas liberadas: 0.
+>Planilla de Vuelos que Salen Hoy:
+Linea: MadridEnAvioneta-0-2-4-Avioneta-MVD-MAD-0745-840-DIARIA.
+Primera:
+Turista:
+Asiento: 3-Cliente: 'Santiago'-'Dalchiele'-C5046578-IT
+>Cliente: 'Santiago'-'Dalchiele'-C5046578-IT-70.
+Movimientos:
+2-PRIMERA-20100506-MadridEnAvioneta-MULTA
+2-TURISTA-20100506-MadridEnAvioneta-COMPRA
+3-TURISTA-20100507-MadridEnAvioneta-COMPRA
+>Fin!

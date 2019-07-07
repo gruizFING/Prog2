@@ -1,0 +1,13 @@
+% XDS project file
+
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\DEF\Historial.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\SRC\Historial.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\SRC\PruebaHistorial.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\DEF\Avion.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\DEF\Fecha.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\DEF\MovimientoCliente.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\SRC\Avion.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\SRC\Fecha.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\SRC\MovimientoCliente.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\SRC\Linea.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\proyect\DEF\Linea.def

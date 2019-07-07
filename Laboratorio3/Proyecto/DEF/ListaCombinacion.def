@@ -1,0 +1,58 @@
+DEFINITION MODULE ListaCombinacion;
+(*******************************************************************************
+Módulo de definicion de ListaCombinacion.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Avion            IMPORT TClaseAsiento;
+FROM Combinacion      IMPORT Combinacion;
+
+TYPE
+      ListaCombinacion; (* OPACO *)
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearListaCombinacion (): ListaCombinacion;
+(* Crea la lista vacia. *)
+
+PROCEDURE AgregarListaCombinacion (c: Combinacion; VAR l: ListaCombinacion);
+(* Agrega la combinacion 'c' al final de la lista 'l'. *)
+
+
+
+(************ Predicados ****************)
+
+PROCEDURE EsVaciaListaCombinacion (l: ListaCombinacion): BOOLEAN;
+(* Devuelve TRUE si la lista 'l' es vacia, FALSE en otro caso. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerPrimeroListaCombinacion (l: ListaCombinacion): Combinacion;
+(* Precondicion: NOT EsVaciaListaCombinacion (l).
+   Devuelve el primer elemento de la lista 'l'. *)
+
+PROCEDURE ObtenerRestoListaCombinacion (l: ListaCombinacion): ListaCombinacion;
+(* Precondicion: NOT EsVaciaListaCombinacion (l)
+   Devuelve el resto de la lista 'l'. *)
+
+
+
+(*********** Entrada/Salida *************)
+
+PROCEDURE ImprimirListaCombinacion (l: ListaCombinacion; clase: TClaseAsiento);
+(* Imprime la lista 'l' tal como se describe en el comando buscarCombinaciones en la letra. *)
+
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirListaCombinacion (VAR l: ListaCombinacion);
+(* Libera la memoria reservada para la lista 'l'. *)
+
+END ListaCombinacion.

@@ -1,0 +1,23 @@
+altaCliente 'Santiago' 'Dalchiele' C5046578 IT
+altaAvion 2 4 Avioneta
+altaLinea MadridEnAvioneta 0 MVD MAD 0745 840 DIARIA
+infoLinea MadridEnAvioneta
+iniciar 20100504
+reserva MadridEnAvioneta 20100506 C5046578 IT PRIMERA 2
+infoVuelo MadridEnAvioneta 20100506
+infoCliente C5046578 IT
+siguienteDia
+infoVuelo MadridEnAvioneta 20100506
+cancela MadridEnAvioneta 20100506 C5046578 IT PRIMERA 2
+infoVuelo MadridEnAvioneta 20100506
+reserva MadridEnAvioneta 20100506 C5046578 IT TURISTA 2
+infoVuelo MadridEnAvioneta 20100506
+compra MadridEnAvioneta 20100506 C5046578 IT EFECTIVO TURISTA 2
+listarVuelosHoy
+siguienteDia
+compra MadridEnAvioneta 20100507 C5046578 IT EFECTIVO TURISTA 3
+infoVuelo MadridEnAvioneta 20100507
+siguienteDia
+listarVuelosHoy
+infoCliente C5046578 IT
+salir

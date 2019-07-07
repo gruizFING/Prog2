@@ -1,0 +1,54 @@
+DEFINITION MODULE Avion;
+(*******************************************************************************
+Módulo de definicion de Avion.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+
+CONST
+        MAX_ID_AVION                = 100;        
+        MAX_LARGO_DSC_AVION         = 256;
+        MAX_CANTIDAD_ASIENTOS_CLASE = 1000;
+TYPE
+        Avion; (* OPACO *)
+
+        TRangoIdAvion  = [0..MAX_ID_AVION];
+        TDscAvion      = ARRAY [0..MAX_LARGO_DSC_AVION] OF CHAR;
+        TClaseAsiento  = (PRIMERA, TURISTA);
+        TRangoAsiento  = [0..MAX_CANTIDAD_ASIENTOS_CLASE];
+        TAsiento       = RECORD
+                            num:   TRangoAsiento;
+                            clase: TClaseAsiento
+                         END;
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearAvion (id: TRangoIdAvion; 
+                      cantAsientosPrimera, cantAsientosTurista: TRangoAsiento;
+                      dsc: TDscAvion): Avion;
+(* Crea un avion con el identificador, la cantidad de asientos de cada clase y
+   la descripcion pasados como parametro. *)
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerIdAvion (a: Avion): TRangoIdAvion;
+(* Devuelve el identificador del avion 'a'. *)
+
+PROCEDURE ObtenerAsientosAvion (a: Avion; 
+                                claseAsiento : TClaseAsiento): TRangoAsiento;
+(* Devuelve la cantidad de asientos de clase 'claseAsiento' del avion 'a'. *)
+
+PROCEDURE ObtenerDescripcionAvion (a: Avion): TDscAvion;
+(* Devuelve la descripcion del avion 'a'. *)
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirAvion (VAR a: Avion);
+(* Libera la memoria reservada por el avion 'a'. *)
+
+END Avion.

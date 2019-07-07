@@ -1,0 +1,44 @@
+DEFINITION MODULE ABBCombinaciones;
+(*******************************************************************************
+Módulo de definicion del arbol binario de busqueda ABBCombinaciones.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Avion                 IMPORT TClaseAsiento;
+FROM Combinacion           IMPORT Combinacion;
+FROM ListaCombinacion      IMPORT ListaCombinacion;
+
+TYPE
+      ABBCombinaciones;      (* Opaco *)
+      
+      
+
+(************ Constructoras *************)
+
+PROCEDURE CrearABBCombinaciones(): ABBCombinaciones;
+(* Devuelve el arbol vacio. *)
+
+PROCEDURE AgregarABBCombinaciones (c: Combinacion; clase: TClaseAsiento;
+                                   VAR combs: ABBCombinaciones);
+(* Agrega el elemento 'c' al arbol binario de busqueda. 
+   El orden es el definido en el comando 'buscarCombinaciones'. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE EnOrdenABBCombinaciones (combs: ABBCombinaciones): ListaCombinacion;
+(* Devuelve una lista con las combinaciones insertadas en el arbol.
+   Las combinaciones se insertan de acuerdo a una recorrida en 
+   orden del arbol. *)
+
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirABBCombinaciones (VAR combs: ABBCombinaciones);
+(* Libera la memoria reservada para 'combs'. *)
+
+END ABBCombinaciones.

@@ -1,0 +1,87 @@
+DEFINITION MODULE Fecha;
+(*******************************************************************************
+Módulo de definicion de Fecha.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+TYPE
+        Fecha; (* Opaco *)
+                        
+        TDiaSemana = ( DOMINGO, LUNES, MARTES, MIERCOLES, 
+                       JUEVES, VIERNES, SABADO ); 
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearFechaNula (): Fecha;
+(* Crea una fecha sin valor determinado. *)
+
+PROCEDURE CrearFecha (s: ARRAY OF CHAR): Fecha;
+(* Crea una fecha a partir de una cadena de caracteres de la forma yyyyMMdd. *)
+
+PROCEDURE IncFecha (VAR f: Fecha);
+(* Precondicion: NOT EsNulaFecha (f).
+   Devuelve la fecha correspondiente al dia siguiente de 'f'. *)
+
+PROCEDURE DecFecha (VAR f: Fecha);
+(* Precondicion: NOT EsNulaFecha (f).
+   Devuelve la fecha correspondiente al dia anterior de 'f'. *)
+
+PROCEDURE CopiaFecha (f: Fecha): Fecha;
+(* Retorna una copia limpia de la fecha 'f'. *)
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerDiaFecha (f: Fecha): CARDINAL;
+(* Precondicion: NOT EsNulaFecha (f).
+   Devuelve el dia de la fecha 'f'. *)
+
+PROCEDURE ObtenerMesFecha (f: Fecha): CARDINAL;
+(* Precondicion: NOT EsNulaFecha (f).
+   Devuelve el mes de la fecha 'f'. *)
+
+PROCEDURE ObtenerAnioFecha (f: Fecha): CARDINAL;
+(* Precondicion: NOT EsNulaFecha (f).
+   Devuelve el anio de la fecha 'f'. *)
+
+PROCEDURE DiaSemanaFecha (f: Fecha): TDiaSemana;   
+(* Precondicion: NOT EsNulaFecha (f).
+   Precondicion: EsMayorFecha(f,CrearFecha("20001231")).
+   Devuelve el dia de la semana en que cae la fecha 'f'. *)
+
+PROCEDURE FechaToString (f: Fecha; VAR s: ARRAY OF CHAR);
+(* Precondicion: NOT EsNulaFecha (f).
+   Devuelve una fecha en una cadena de caracteres de la forma yyyyMMdd. *)
+
+
+(************ Predicados ****************)
+
+PROCEDURE EsNulaFecha (f: Fecha): BOOLEAN;
+(* Devuelve TRUE si la fecha 'f' no tiene valor determinado, 
+   FALSE en otro caso. *)
+
+PROCEDURE IgualesFecha (fch1, fch2: Fecha): BOOLEAN;
+(* Precondicion: (NOT EsNulaFecha (fch1)) AND (NOT EsNulaFecha (fch2)).
+   Devuelve TRUE si 'fch1' es igual que 'fch2', FALSE en otro caso. *)
+
+PROCEDURE EsMayorFecha (fch1, fch2: Fecha): BOOLEAN;
+(* Precondicion: (NOT EsNulaFecha (fch1)) AND (NOT EsNulaFecha (fch2)).
+   Devuelve TRUE si 'fch1' es mayor que 'fch2', FALSE en otro caso. *)
+
+PROCEDURE EsMenorFecha (fch1, fch2: Fecha): BOOLEAN;
+(* Precondicion: (NOT EsNulaFecha (fch1)) AND (NOT EsNulaFecha (fch2)).
+   Devuelve TRUE si 'fch1' es menor que 'fch2', FALSE en otro caso. *)
+
+PROCEDURE EsBisiestoAnioFecha (f: Fecha): BOOLEAN;
+(* Devuelve TRUE si la fecha 'f' es de un anio bisiesto, 
+   FALSE en otro caso. *)
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirFecha (VAR f: Fecha);
+(* Libera la memoria reservada para 'f'. *)
+
+END Fecha.

@@ -1,0 +1,17 @@
+conectar servidor
+Comando leido: conectar
+Con los siguientes parametros: servidor
+autenticar
+Comando leido: autenticar
+Sin parametros
+enviar datos
+Comando leido: enviar
+Con los siguientes parametros: datos
+procesar 4567 09ya tr45
+Comando leido: procesar
+Con los siguientes parametros: 4567,09ya,tr45
+desconectar
+Comando leido: desconectar
+Sin parametros
+salir
+Fin!

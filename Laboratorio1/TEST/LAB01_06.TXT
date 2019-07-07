@@ -1,0 +1,32 @@
+hola
+Comando leido: hola
+Sin parametros
+mundo
+Comando leido: mundo
+Sin parametros
+este
+Comando leido: este
+Sin parametros
+es
+Comando leido: es
+Sin parametros
+el
+Comando leido: el
+Sin parametros
+primer
+Comando leido: primer
+Sin parametros
+lab
+Comando leido: lab
+Sin parametros
+de
+Comando leido: de
+Sin parametros
+prog
+Comando leido: prog
+Sin parametros
+2
+Comando leido: 2
+Sin parametros
+salir
+Fin!

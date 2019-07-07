@@ -1,0 +1,77 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>altaCliente 'Santiago' 'Dalchiele' C5046578 IT
+Cliente C5046578-IT ingresado.
+>altaAvion 2 4 Avioneta
+Avion 0 ingresado.
+>altaLinea MadridEnAvioneta 0 MVD MAD 0745 840 DIARIA
+Linea MadridEnAvioneta ingresada.
+>infoLinea MadridEnAvioneta
+Linea: MadridEnAvioneta-0-2-4-Avioneta-MVD-MAD-0745-840-DIARIA.
+>iniciar 20100504
+Fecha 20100504 inicializada.
+>reserva MadridEnAvioneta 20100506 C5046578 IT PRIMERA 2
+Asiento 2-PRIMERA-20100506-MadridEnAvioneta resevado a C5046578-IT.
+>infoVuelo MadridEnAvioneta 20100506
+Primera:
+LR
+Turista:
+LLLL
+>infoCliente C5046578 IT
+Cliente: 'Santiago'-'Dalchiele'-C5046578-IT-0.
+Movimientos:
+2-PRIMERA-20100506-MadridEnAvioneta-RESERVA
+>siguienteDia
+Fecha actual 20100505. Reservas liberadas: 1.
+>infoVuelo MadridEnAvioneta 20100506
+Primera:
+LL
+Turista:
+LLLL
+>cancela MadridEnAvioneta 20100506 C5046578 IT PRIMERA 2
+ERROR: Cliente C5046578-IT no tiene la reserva 2-PRIMERA-20100506-MadridEnAvioneta.
+>infoVuelo MadridEnAvioneta 20100506
+Primera:
+LL
+Turista:
+LLLL
+>reserva MadridEnAvioneta 20100506 C5046578 IT TURISTA 2
+ERROR: Comando invalido para la fecha 20100506.
+>infoVuelo MadridEnAvioneta 20100506
+Primera:
+LL
+Turista:
+LLLL
+>compra MadridEnAvioneta 20100506 C5046578 IT EFECTIVO TURISTA 2
+Asiento 2-TURISTA-20100506-MadridEnAvioneta vendido a C5046578-IT.
+Costo: 1120-EFECTIVO. Puntos: 140.
+>listarVuelosHoy
+Planilla de Vuelos que Salen Hoy:
+>siguienteDia
+Fecha actual 20100506. Reservas liberadas: 0.
+>compra MadridEnAvioneta 20100507 C5046578 IT EFECTIVO TURISTA 3
+Asiento 3-TURISTA-20100507-MadridEnAvioneta vendido a C5046578-IT.
+Costo: 1120-EFECTIVO. Puntos: 140.
+>infoVuelo MadridEnAvioneta 20100507
+Primera:
+LL
+Turista:
+LLCL
+>siguienteDia
+Fecha actual 20100507. Reservas liberadas: 0.
+>listarVuelosHoy
+Planilla de Vuelos que Salen Hoy:
+Linea: MadridEnAvioneta-0-2-4-Avioneta-MVD-MAD-0745-840-DIARIA.
+Primera:
+Turista:
+Asiento: 3-Cliente: 'Santiago'-'Dalchiele'-C5046578-IT
+>infoCliente C5046578 IT
+Cliente: 'Santiago'-'Dalchiele'-C5046578-IT-70.
+Movimientos:
+2-PRIMERA-20100506-MadridEnAvioneta-MULTA
+2-TURISTA-20100506-MadridEnAvioneta-COMPRA
+3-TURISTA-20100507-MadridEnAvioneta-COMPRA
+>salir
+Fin!

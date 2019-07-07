@@ -1,0 +1,58 @@
+DEFINITION MODULE DicAviones;
+(*******************************************************************************
+Modulo de definicion de DicAviones.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Avion  IMPORT Avion, TRangoIdAvion;
+
+CONST
+        MAX_CANTIDAD_AVIONES = 101;
+        
+TYPE
+        DicAviones; (* Opaco *)
+        TRangoCantAviones = [0..MAX_CANTIDAD_AVIONES];
+        
+        
+
+(************ Constructoras *************)
+
+PROCEDURE CrearDicAviones (): DicAviones;
+(* Crea el diccionario de aviones vacio. *)
+
+PROCEDURE InsertarAvionDicAviones (a: Avion; VAR dic: DicAviones);
+(* Precondicion: NOT PerteneceAvionDicAviones (ObtenerIdAvion(a), dic).
+   Precondicion: ObtenerTamanioDicAviones(dic) < MAX_CANTIDAD_AVIONES.
+   Inserta el avion 'a' en el diccionario de aviones 'dic'. *)
+
+
+(************ Selectoras ****************)
+
+PROCEDURE EsVacioDicAviones (dic: DicAviones): BOOLEAN;
+(* Devuelve TRUE si el diccionario 'dic' es vacio y FALSE en otro caso. *)
+
+PROCEDURE ObtenerTamanioDicAviones (dic: DicAviones): TRangoCantAviones;
+(* Devuelve el tamanio del diccionario 'dic'. *)
+
+PROCEDURE ObtenerAvionDicAviones (id: TRangoIdAvion; dic: DicAviones): Avion;
+(* Precondicion: PerteneceAvionDicAviones (id, dic).
+   Devuelve el avion cuyo identificador es 'id' del diccionario 'dic'. *)
+
+
+(************ Predicados ****************)
+
+PROCEDURE PerteneceAvionDicAviones (id: TRangoIdAvion; 
+                                    dic: DicAviones): BOOLEAN;
+(* Devuelve TRUE si existe un avion de identificador 'id' en el diccionario
+   'dic' y FALSE en otro caso. *)
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirDicAviones (VAR dic: DicAviones);
+(* Libera la memoria reservada por el diccionario 'dic'. *)
+
+
+END DicAviones.

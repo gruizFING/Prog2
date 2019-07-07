@@ -1,0 +1,14 @@
+/sys=C
+/debug
+/stack=100000
+/name=PruebaHistorial.exe
+obj\Avion.obj
+obj\Fecha.obj
+obj\Historial.obj
+obj\Linea.obj
+obj\MovimientoCliente.obj
+obj\PruebaHistorial.obj
+C:\XDS\lib\x86\xstart.lib
+C:\XDS\lib\x86\libxds.lib
+C:\XDS\lib\x86\import32.lib
+

@@ -1,0 +1,70 @@
+DEFINITION MODULE MovimientoCliente;
+(*******************************************************************************
+Módulo de definicion de MovimientoCliente.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Avion IMPORT TAsiento;
+FROM Fecha IMPORT Fecha;
+FROM Linea IMPORT TIdLinea, TDuracion;
+
+(*AGREGADO*)
+FROM IOChan                   IMPORT ChanId;
+
+
+TYPE
+        MovimientoCliente; (* OPACO *)
+        TEstadoMovimiento = (M_COMPRA, M_RESERVA, M_CANCELA, M_MULTA);
+
+        
+
+(************ Constructoras *************)
+
+PROCEDURE CrearMovimientoCliente (idLin: TIdLinea; f: Fecha; 
+                                  asiento: TAsiento; dur: TDuracion; 
+                                  estado: TEstadoMovimiento):MovimientoCliente;
+(* Crea un MovimientoCliente con el identificador de linea 'idLin', fecha 'f',
+ asiento 'asiento', duracion 'dur' y estado 'estado'. *)
+
+PROCEDURE CambiarEstadoMovimientoCliente (estado: TEstadoMovimiento; 
+                                          VAR m: MovimientoCliente);   
+(* Cambia a 'estado' el estado del MovimientoCliente 'm'. *)   
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerIdLineaMovimientoCliente (m: MovimientoCliente): TIdLinea;
+(* Devuelve el identificador de linea del MovimientoCliente 'm'.*)
+
+PROCEDURE ObtenerFechaMovimientoCliente (m: MovimientoCliente): Fecha;
+(* Devuelve la fecha del MovimientoCliente 'm'.*)
+
+PROCEDURE ObtenerDuracionMovimientoCliente (m: MovimientoCliente): TDuracion;
+(* Devuelve la duracion del MovimientoCliente 'm'.*)
+
+PROCEDURE ObtenerAsientoMovimientoCliente (m: MovimientoCliente): TAsiento;
+(* Devuelve el asiento del MovimientoCliente 'm'.*)
+
+PROCEDURE ObtenerEstadoMovimientoCliente(m:MovimientoCliente):TEstadoMovimiento;
+(* Devuelve el estado del MovimientoCliente 'm'.*)
+
+
+(*********** Entrada/Salida *************)
+
+(*CAMBIA*)
+PROCEDURE ImprimirMovimientoCliente (cid: ChanId; m: MovimientoCliente);
+(* Precondicion: cid no esta vacio, ya se encuentra inicilizado
+   Imprime la informacion del movimiento del cliente 'm' en el formato
+   especificado en la letra. *)
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirMovimientoCliente (VAR m: MovimientoCliente);
+(* Libera la memoria reservada por el MovimientoCliente 'm'. *)
+
+
+END MovimientoCliente.

@@ -1,0 +1,59 @@
+DEFINITION MODULE Tramo;
+(*******************************************************************************
+Módulo de definición del TAD Tramo.
+
+Laboratorio de Programación 2.
+InCo-FIng-UDELAR
+*******************************************************************************)
+
+FROM Fecha      IMPORT Fecha;
+FROM Hora       IMPORT Hora;
+FROM Linea      IMPORT Linea;
+
+CONST
+      MAX_HORAS_TRASBORDO = 12;
+
+
+TYPE
+      Tramo;      (* OPACO *)
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearTramo (l: Linea; fchSal, fchLle: Fecha; 
+                      horSal, horLle: Hora): Tramo;
+(* Crea un tramo donde se utiliza la linea 'l' saliendo del aeropuerto origen
+   el dia 'fchSal' y a la hora 'horSal', llegando el dia 'fchLle' a la hora
+   'horLle'. *)
+
+PROCEDURE CopiaTramo (t: Tramo): Tramo;
+(* Devuelve una copia limpia del tramo 't'. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerLineaTramo (t: Tramo): Linea;
+(* Devuelve la linea del tramo 't'. *)
+
+PROCEDURE ObtenerFechaSalidaTramo (t: Tramo): Fecha;
+(* Devuelve la fecha de salida del tramo 't'. *)
+
+PROCEDURE ObtenerHoraSalidaTramo (t: Tramo): Hora;
+(* Devuelve la hora de salida del tramo 't'. *)
+
+PROCEDURE ObtenerFechaLlegadaTramo (t: Tramo): Fecha;
+(* Devuelve la fecha de llegada del tramo 't'. *)
+
+PROCEDURE ObtenerHoraLlegadaTramo (t: Tramo): Hora;
+(* Devuelve la hora de llegada del tramo 't'. *)
+
+
+
+(************ Destructoras *************)
+
+PROCEDURE DestruirTramo (VAR t: Tramo);
+(* Libera la memoria reservada por el tramo 't'. *)
+
+END Tramo.

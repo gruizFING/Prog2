@@ -1,0 +1,107 @@
+DEFINITION MODULE Condicion;
+(*******************************************************************************
+Modulo de definicion del TAD Condicion.
+
+Laboratorio de Programacion 2.
+InCo-FIng-UDELAR
+*******************************************************************************)
+
+
+CONST 
+      MAX_LARGO_POR = 15;
+      MAX_LARGO_VALOR = 20;
+
+TYPE
+      Condicion; (* opaco *)            
+      TCondOperador = (OP_MENOR, OP_IGUAL, OP_MAYOR);
+      TCondOperLog  = (OP_NOT, OP_AND, OP_OR);
+
+      TCondPor = ARRAY [0 .. MAX_LARGO_POR] OF CHAR;
+      TValor   = ARRAY [0 .. MAX_LARGO_VALOR] OF CHAR;
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearCondicionVacia (): Condicion;
+(* Crea una condicion vacia. *)
+
+PROCEDURE CrearCondicionSimple (por: TCondPor; op: TCondOperador;
+                                v: TValor): Condicion;
+(* Crea una condicion simple. *)
+   
+PROCEDURE CrearCondicionUnaria (c: Condicion): Condicion;
+(* Devuelve una nueva condicion que vincula la subexpresion 'c' con el operador
+   logico OP_NOT. *)
+
+PROCEDURE CrearCondicionBinaria (op: TCondOperLog;
+                                 izq, der: Condicion): Condicion;
+(* Precondicion: 'op' toma los valores OP_AND o OP_OR.
+   Devuelve una nueva condicion que vincula las subexpresiones 'izq' y 'der'
+   mediante el operador logico 'op'. *)
+
+
+
+(************ Predicados *************)
+
+PROCEDURE EsVaciaCondicion (cond: Condicion): BOOLEAN;
+(* Devuelve TRUE unicamente si la condicion 'c' es vacia y FALSE en caso
+   contrario. *)
+
+PROCEDURE EsOperadorCondicion (cond: Condicion): BOOLEAN;
+(* Precondicion: NOT EsVaciaCondicion (cond)
+   Devuelve TRUE si la condicion 'cond' esta formada por un campo, un operador
+   de comparacion y un valor. *)
+
+PROCEDURE EsOperLogCondicion (cond: Condicion): BOOLEAN;
+(* Precondicion: NOT EsVaciaCondicion (cond)
+   Devuelve TRUE si la condicion 'cond' esta formada por un operador logico que
+   vincula una o dos subexpresiones. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerOperadorCondicion (c: Condicion): TCondOperador;
+(* Precondicion: NOT EsVaciaCondicion(c) AND EsOperadorCondicion(c).
+   Devuelve el operador de la condicion 'c'. *)
+
+PROCEDURE ObtenerPorCondicion (c: Condicion): TCondPor;
+(* Precondicion: NOT EsVaciaCondicion(c) AND EsOperadorCondicion(c).
+   Devuelve el campo por el que se quiere evaluar la condicion 'c'. *)
+
+PROCEDURE ObtenerValorCondicion (c: Condicion): TValor;
+(* Precondicion: NOT EsVaciaCondicion(c) AND EsOperadorCondicion(c).
+   Devuelve el valor de la condicion 'c'. *)
+
+PROCEDURE ObtenerOperLogCondicion (c : Condicion): TCondOperLog;
+(* Precondicion: NOT EsVaciaCondicion(c) AND EsOperLogCondicion(c)
+   Devuelve el operador logico de la condicion 'c' que debe estar formada por 
+   un operador logico que vincula una o dos subexpresiones. *)
+
+PROCEDURE ObtenerIzqCondicion (c : Condicion): Condicion;
+(* Precondicion: NOT EsVaciaCondicion(c) AND EsOperLogCondicion(c) AND
+                              (ObtenerOperLogCondicion(c) <> OP_NOT)
+   Devuelve la subexpresion izquierda de la condicion 'c' que debe estar 
+   formada por un operador logico que vincula dos subexpresiones. *)
+
+PROCEDURE ObtenerDerCondicion (c : Condicion): Condicion;
+(* Precondicion: NOT EsVaciaCondicion(c) AND EsOperLogCondicion(c) AND
+                              (ObtenerOperLogCondicion(c) <> OP_NOT)
+   Devuelve la subexpresion derecha de la condicion 'c' que debe estar formada
+   por un operador logico que vincula dos subexpresiones. *)
+
+PROCEDURE ObtenerSubCondicion (c : Condicion): Condicion;
+(* Precondicion: NOT EsVaciaCondicion(c) AND EsOperLogCondicion(c) AND
+                              (ObtenerOperLogCondicion(c) = OP_NOT)
+   Devuelve la subexpresion de la condicion 'c' que debe estar formada por el
+   operador logico unario OP_NOT y una subexpresion. *)
+
+
+
+(************ Destructoras *************)
+
+PROCEDURE DestruirCondicion (VAR c: Condicion);
+(* Libera la memoria reservada por la condicion 'c'. *)
+            
+END Condicion.

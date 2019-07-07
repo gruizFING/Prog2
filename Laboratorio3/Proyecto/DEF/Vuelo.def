@@ -1,0 +1,159 @@
+DEFINITION MODULE Vuelo;
+(*******************************************************************************
+Módulo de definicion de Vuelo.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Avion     IMPORT TRangoAsiento,TClaseAsiento,TAsiento;
+FROM Linea     IMPORT Linea;
+FROM Cliente   IMPORT Cliente;
+FROM Fecha     IMPORT Fecha;
+
+(*AGREGADO*)
+FROM IOChan                   IMPORT ChanId;
+
+
+CONST
+      NUMERO_ASIENTO_NO_ASIGNADO = 0;
+      
+      
+TYPE
+      Vuelo ; (* OPACO *)
+      TEstadoAsiento = ( V_DISPONIBLE, V_RESERVA, V_COMPRA );
+
+
+ 
+(************ Constructoras *************)
+
+PROCEDURE CrearVuelo (lin: Linea; f: Fecha): Vuelo;
+(* Crea un vuelo con la linea 'lin' para la fecha 'f' con todos los asientos
+   disponibles. *)
+
+
+PROCEDURE ComprarVuelo (cli: Cliente; asiento: TAsiento; 
+                        VAR v: Vuelo): TRangoAsiento;
+(* Precondiciones:
+            0 <= 'asiento.num' <= cantidad de asientos en clase 'asiento.clase' 
+            del avion del vuelo 'v'.
+            Si ('asiento.num' <> 0) 
+                   => El asiento 'asiento.num' en clase 'asiento.clase' esta 
+                      reservado al cliente 'cli' o disponible.
+            Si ('asiento.num' = 0) 
+                   => ObtenerDisponiblesVuelo(asiento.clase, v) > 0.
+
+            Compra un asiento en la clase 'asiento.clase' para el cliente 'cli'.
+            Si ('asiento.num' <> 0) compra el asiento numero 'asiento.num'. 
+            Si ('asiento.num' = 0) compra el asiento disponible con numero 
+            mas chico en la clase dada por 'asiento.clase'.  
+            Devuelve el numero del asiento comprado. *)
+
+PROCEDURE ReservarVuelo (cli: Cliente; asiento: TAsiento; 
+                         VAR v: Vuelo): TRangoAsiento;
+(* Precondiciones:
+            0 <= 'asiento.num' <= cantidad de asientos en clase 'asiento.clase' 
+            del avion del vuelo 'v'.
+            ObtenerDisponiblesVuelo(asiento.clase, v) > 0.
+            Si ('asiento.num' <> 0) 
+                    => ObtenerEstadoVuelo (asiento, v) = DISPONIBLE.
+
+            Reserva un asiento en la clase 'asiento.clase' para el cliente 'cli'.
+            Si ('asiento.num' <> 0) reserva el asiento numero 'asiento.num'. 
+            Si ('asiento.num' = 0) reserva el asiento disponible con numero 
+            mas chico en la clase dada por 'asiento.clase'.  
+            Devuelve el numero del asiento reservado. *)
+            
+PROCEDURE CancelarVuelo (cli: Cliente; asiento: TAsiento; VAR v: Vuelo);
+(* Precondiciones:
+            1 <= asiento.num <= cantidad de asientos en clase 'asiento.clase' 
+            del avion del vuelo 'v'.
+            El asiento 'asiento.num' en clase 'asiento.clase' esta reservado 
+            por el cliente 'cli'.
+   
+            Cancela el asiento numero 'asiento.num' en clase 'asiento.clase' 
+            del cliente 'cli' para el vuelo 'v'. *)
+   
+PROCEDURE AnularReservasVuelo(VAR v : Vuelo; 
+                              VAR cantTurista, cantPrimera: TRangoAsiento);
+(* Anula las reservas hechas para el vuelo 'v'. 
+   Cada uno de los asientos reservados pasan a disponibles, 
+   actualizando para cada cliente su Historial con las respectivas aplicaciones 
+   de multas dadas en la letra de la tarea. *)
+
+(*AGREGADO, OPCIONAL*)
+PROCEDURE MarcarAsientoVuelo(a: TAsiento; e: TEstadoAsiento; c: Cliente; 
+                             VAR v: Vuelo);
+(* Precondiciones:
+            1 <= 'a.num' <= cantidad de asientos en clase 'a.clase' 
+            del avion del vuelo 'v'.
+            EstaDisponibleAsientoVuelo(a, v) = TRUE.
+            
+            Reserva o Compra, dependiendo de 'e', el asiento 'a'  
+            para el cliente 'cli'.
+
+            No genera ningún movimiento al cliente.
+*)
+   
+   
+(************ Predicados ****************)
+PROCEDURE EstaReservadoClienteVuelo(cli:Cliente; asiento:TAsiento;
+                                    vuelo:Vuelo): BOOLEAN;
+(* Devuelve FALSE en caso que el asiento 'asiento.num' de la 
+   clase 'asiento.clase' no fue reservado por el cliente 'cli' en el vuelo 
+   'vuelo' y TRUE en el caso contrario. *)       
+
+PROCEDURE EstaCompradoClienteVuelo(cli:Cliente; asiento:TAsiento;
+                                   vuelo:Vuelo): BOOLEAN;
+(* Devuelve FALSE en caso que el asiento 'asiento.num' de la clase 
+   'asiento.clase'no fue comprado por el cliente 'cli' en el vuelo 'vuelo' 
+   y TRUE en el caso contrario *)       
+
+PROCEDURE EstaDisponibleAsientoVuelo(asiento:TAsiento;vuelo :Vuelo): BOOLEAN;
+(* Devuelve TRUE en caso que el asiento 'asiento.num' de la clase 
+   'asiento.clase' se encuentre disponible y FALSE en caso contrario. *)
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerLineaVuelo (v: Vuelo): Linea;
+(* Devuelve la linea del vuelo 'v'. *)
+
+PROCEDURE ObtenerFechaVuelo (v: Vuelo): Fecha;
+(* Devuelve la fecha del vuelo 'v'. *)
+
+PROCEDURE ObtenerEstadoVuelo (asiento: TAsiento; v: Vuelo): TEstadoAsiento;
+(* Precondicion: 1 <= 'asiento.num' <= cantidad de asientos en clase 
+   'asiento.clase' del avion del vuelo 'v'.
+   Devuelve el estado del asiento 'asiento.num' del vuelo 'v' en la 
+   clase 'asiento.clase'. *)
+ 
+PROCEDURE ObtenerClienteVuelo (asiento: TAsiento; v: Vuelo): Cliente;
+(* Precondiciones: 
+          1 <= 'asiento.num' <= cantidad de asientos en clase 
+          'asiento.clase' del avion del vuelo 'v'.
+
+          NOT EstaDisponibleAsientoVuelo(asiento,v).
+
+   Devuelve el cliente del asiento 'asiento.num' del vuelo 'v' en la 
+   clase 'asiento.clase'. *)
+   
+PROCEDURE ObtenerDisponiblesVuelo (clase : TClaseAsiento; 
+                                   v: Vuelo): TRangoAsiento;
+(* Devuelve la cantidad de asientos disponibles para el vuelo 'v' 
+   en la clase 'clase'. *)
+
+
+(************ Entrada/Salida ************)
+
+(*CAMBIA*)
+PROCEDURE ImprimirInfoVuelo (cid: ChanId; v: Vuelo);
+(* Precondicion: cid no esta vacio, ya se encuentra inicilizado
+   Imprime en 'cid' la informacion del vuelo 'v' en el
+   formato especificado en la letra *)
+
+(************ Destructoras **************)
+ 
+PROCEDURE DestruirVuelo (VAR v: Vuelo);
+(* Libera la memoria reservada por el vuelo 'v'. *)
+
+END Vuelo.

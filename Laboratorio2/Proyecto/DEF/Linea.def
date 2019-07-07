@@ -1,0 +1,104 @@
+DEFINITION MODULE Linea;
+(*******************************************************************************
+Módulo de definicion de Linea.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Avion  IMPORT Avion;
+FROM Fecha  IMPORT TDiaSemana; 
+
+CONST
+        MAX_LARGO_ID_LINEA       = 20;
+        MAX_LARGO_NOM_AEROPUERTO = 3;
+        
+        COSTO_HORA_EFECTIVO_PRIMERA = 120;
+        COSTO_HORA_PUNTOS_PRIMERA   = 150;
+        
+        COSTO_HORA_EFECTIVO_TURISTA = 80;
+        COSTO_HORA_PUNTOS_TURISTA   = 100;
+        
+        GANA_PUNTOS_HORA_PRIMERA = 15;
+        GANA_PUNTOS_HORA_TURISTA = 10;
+        
+        MULTA_PUNTOS_HORA_PRIMERA = 15;
+        MULTA_PUNTOS_HORA_TURISTA = 10;
+
+
+TYPE                
+        Linea; (* OPACO *)
+        TIdLinea         = ARRAY [0..MAX_LARGO_ID_LINEA] OF CHAR;
+        TIdAeropuerto    = ARRAY [0..MAX_LARGO_NOM_AEROPUERTO] OF CHAR;
+        TTipoLinea       = (DIARIA, SEMANAL);
+        THora            = CARDINAL;
+        TDuracion        = CARDINAL;
+        TModoPago        = (EFECTIVO, PUNTOS);
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearLineaDiaria (id: TIdLinea; av: Avion; orig, dest: TIdAeropuerto;
+                            hora: THora;  dur: TDuracion): Linea;
+(* Precondicion: hora es de la forma hhmm con hh en el rango 00..23 y
+                 mm en el rango 00..59
+   Crea la linea de tipo DIARIA con el identificador 'id', avion 'av',
+   aeropuerto de origen 'orig', aeropuerto destino 'dest', 
+   hora de salida 'hora' y con duracion 'dur'. *)
+
+PROCEDURE CrearLineaSemanal (id: TIdLinea; av: Avion; 
+                             orig, dest: TIdAeropuerto; hora: THora; 
+                             dur: TDuracion; dia: TDiaSemana): Linea;
+(* Precondicion: hora es de la forma hhmm con hh en el rango 00..23 y
+                 mm en el rango 00..59
+   Crea la linea de tipo SEMANAL con el identificador 'id', avion 'av',
+   aeropuerto de origen 'orig', aeropuerto destino 'dest', 
+   hora de salida 'hora', duracion 'dur' y el dia de la semana 'dia'. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerIdLinea (lin: Linea): TIdLinea;
+(* Devuelve el identificador de la linea 'lin'. *)
+
+PROCEDURE ObtenerAvionLinea (lin: Linea): Avion;
+(* Devuelve el avion de la linea 'lin'. *)
+
+PROCEDURE ObtenerOrigenLinea (lin: Linea): TIdAeropuerto;
+(* Devuelve el aeropuerto origen de la linea 'lin'. *)
+
+PROCEDURE ObtenerDestinoLinea (lin: Linea): TIdAeropuerto;
+(* Devuelve el aeropuerto destino de la linea 'lin'. *)
+
+PROCEDURE ObtenerHoraSalidaLinea (lin: Linea): THora;
+(* Devuelve la hora de salida de la linea 'lin'. *)
+
+PROCEDURE ObtenerDuracionLinea (lin: Linea): TDuracion;
+(* Devuelve la duracion de la linea 'lin'. *)
+
+PROCEDURE ObtenerTipoLinea (lin: Linea): TTipoLinea;
+(* Devuelve el tipo de la linea 'lin'. *)
+
+PROCEDURE ObtenerDiaSemanaLinea (lin: Linea): TDiaSemana;
+(* Precondicion: ObtenerTipoLinea(lin) = SEMANAL
+   Devuelve el dia de la linea 'lin'. *)
+
+
+
+(************ Entrada/Salida ************)
+
+PROCEDURE ImprimirInfoLinea(lin: Linea);                 
+(* Imprime la informacion de la linea 'lin' en el formato especificado 
+   en la letra *)
+
+
+ 
+(************ Destructoras **************)
+ 
+PROCEDURE DestruirLinea (VAR lin: Linea);
+(* Libera la memoria reservada por la linea 'lin'. *)
+
+
+END Linea.

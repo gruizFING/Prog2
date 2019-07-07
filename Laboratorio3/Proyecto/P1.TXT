@@ -1,0 +1,11 @@
+1
+Avion: 0-10-100-AIRBUSA300.
+1
+Linea: INCO101-0-EZE-MVD-1600-60-DIARIA.
+1
+Cliente: 'Roberto'-'Gomez'-1863456-UY--10.
+Movimientos:
+3-TURISTA-20100426-INCO101-MULTA
+finCliente
+20100425
+0

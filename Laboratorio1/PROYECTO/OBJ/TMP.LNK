@@ -1,0 +1,10 @@
+/sys=C
+/debug
+/stack=100000
+/name=Interprete.exe
+obj\Interprete.obj
+C:\XDS\lib\x86\xstart.lib
+C:\XDS\lib\x86\libxds.lib
+C:\XDS\lib\x86\import32.lib
+C:\Users\german\Documents\prog2\Laboratorio1\proyecto\Comando.lib
+

@@ -1,0 +1,73 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>listarClientes
+Clientes:
+>listarLineas
+Lineas:
+>altaCliente 'Juan Martin' 'Martinez' TTTTTTT UY
+Cliente TTTTTTT-UY ingresado.
+>altaCliente 'Juan Martin' 'Martinez' TTTTTTT UY
+ERROR: Existe un cliente con pasaporte TTTTTTT y nacionalidad UY.
+>altaCliente 'JuaN MarTin' 'MartinEz' TTTTTTT UY
+ERROR: Existe un cliente con pasaporte TTTTTTT y nacionalidad UY.
+>altaCliente 'JuaN MarTin' 'MartinEz' TTTTTT UY
+Cliente TTTTTT-UY ingresado.
+>altaCliente 'Juan Martin' 'Martinez' TTTTTTt UY
+Cliente TTTTTTt-UY ingresado.
+>listarClientes
+Clientes:
+TTTTTTT-UY
+TTTTTT-UY
+TTTTTTt-UY
+>infoCliente TTTTTT UY
+Cliente: 'JuaN MarTin'-'MartinEz'-TTTTTT-UY-0.
+Movimientos:
+>infoCliente TTTTT UY
+ERROR: Cliente TTTTT-UY no ingresado.
+>altaAvion 1 1 HARRIER
+Avion 0 ingresado.
+>altaLinea HARRIER1 0 MVD ATI 0600 30 SEMANAL DOMINGO
+Linea HARRIER1 ingresada.
+>altaLinea HARRIER2 0 ATI MVD 0900 30 SEMANAL DOMINGO
+Linea HARRIER2 ingresada.
+>altaLinea HARRIER3 0 MVD KSQ 0600 360 SEMANAL LUNES
+Linea HARRIER3 ingresada.
+>altaLinea HARRIER4 0 KSQ MVD 1430 360 SEMANAL LUNES
+Linea HARRIER4 ingresada.
+>altaLinea HARRIER5 0 MVD CWB 0045 120 SEMANAL MARTES
+Linea HARRIER5 ingresada.
+>altaLinea HARRIER6 0 CWB MVD 0545 120 SEMANAL MARTES
+Linea HARRIER6 ingresada.
+>altaLinea HARRIER7 0 MVD HBI 1200 480 SEMANAL MIERCOLES
+Linea HARRIER7 ingresada.
+>altaLinea HARRIER8 0 HBI MVD 2200 480 SEMANAL MIERCOLES
+Linea HARRIER8 ingresada.
+>infoLinea HARRIER3
+Linea: HARRIER3-0-1-1-HARRIER-MVD-KSQ-0600-360-SEMANAL LUNES.
+>reserva HARRIER3 20100426 TTTTTTt UY PRIMERA
+ERROR: Fecha no inicializada.
+>iniciar 20100421
+Fecha 20100421 inicializada.
+>infoLinea HARRIER3
+Linea: HARRIER3-0-1-1-HARRIER-MVD-KSQ-0600-360-SEMANAL LUNES.
+>reserva HARRIER3 20100426 TTTTTTt UY PRIMERA
+Asiento 1-PRIMERA-20100426-HARRIER3 resevado a TTTTTTt-UY.
+>reserva HARRIER3 20100426 TTTTTTt UY PRIMERA 1
+ERROR: Asiento 1-PRIMERA-20100426-HARRIER3 no disponible.
+>reserva HARRIER3 20100426 TTTTTTt UY TURISTA 1
+Asiento 1-TURISTA-20100426-HARRIER3 resevado a TTTTTTt-UY.
+>infoCliente TTTTTTt UY
+Cliente: 'Juan Martin'-'Martinez'-TTTTTTt-UY-0.
+Movimientos:
+1-PRIMERA-20100426-HARRIER3-RESERVA
+1-TURISTA-20100426-HARRIER3-RESERVA
+>reserva HARRIER3 20100427 TTTTTTt UY PRIMERA 1
+ERROR: No existe vuelo 20100427-HARRIER3.
+>reserva HARRIER3 20100426 TTTTTTt UY PRIMERA 1
+ERROR: Asiento 1-PRIMERA-20100426-HARRIER3 no disponible.
+>reserva HARRIER4 20100426 TTTTTTt UY PRIMERA 1
+Asiento 1-PRIMERA-20100426-HARRIER4 resevado a TTTTTTt-UY.
+>salir
+Fin!

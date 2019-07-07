@@ -1,0 +1,65 @@
+DEFINITION MODULE Historial;
+(*******************************************************************************
+Módulo de definicion de Historial.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM MovimientoCliente IMPORT MovimientoCliente;
+
+(*AGREGADO*)
+FROM IOChan                   IMPORT ChanId;
+
+
+TYPE
+        Historial; (* OPACO *)
+
+
+        
+(************ Constructoras *************)
+
+PROCEDURE CrearHistorial (): Historial;
+(* Crea el historial vacio. *)
+
+PROCEDURE AgregarMovimientoHistorial (mov: MovimientoCliente; VAR h: Historial);
+(* Precondicion: NO hay en el historial 'h' un movimiento del cliente 
+                 para la misma linea, fecha y asiento y con estado = M_COMPRA 
+                 o M_RESERVA, que el movimiento 'mov' agregado.
+   Agrega  el movimiento 'mov' al final del historial 'h'. *)
+
+
+(************ Predicados ****************)
+
+PROCEDURE EsVacioHistorial (h: Historial): BOOLEAN;
+(* Devuelve TRUE si el historial 'h' es vacio y FALSE en otro caso. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerPrimerMovimientoHistorial (h: Historial): MovimientoCliente;
+(* Precondicion: NOT EsVacioHistorial (h).
+   Devuelve el primer elemento del historial 'h'. *)
+
+PROCEDURE ObtenerRestoHistorial (h: Historial): Historial;
+(* Precondicion: NOT EsVacioHistorial (h).
+   Devuelve el resto del historial 'h'. *)
+
+
+
+(*********** Entrada/Salida *************)
+
+(* CAMBIA *)
+PROCEDURE ImprimirHistorial (cid: ChanId; h: Historial);
+(* Precondicion: cid no esta vacio, ya se encuentra inicilizado
+   Imprime la informacion del historial 'h' en el formato especificado
+   en la letra. *)
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirHistorial (VAR h: Historial);
+(* Libera la memoria reservada para el historial 'h'. *)
+
+END Historial.

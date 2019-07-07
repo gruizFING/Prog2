@@ -1,0 +1,11 @@
+Comando leido: sumar
+Con los siguientes parametros: 4,3
+Comando leido: imprimir
+Con los siguientes parametros: datos
+Comando leido: conectar
+Con los siguientes parametros: terminal,servidor
+Comando leido: pausa
+Sin parametros
+Comando leido: sumar
+Con los siguientes parametros: 1,2,3,4
+Fin!

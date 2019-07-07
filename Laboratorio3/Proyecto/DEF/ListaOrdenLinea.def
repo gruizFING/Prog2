@@ -1,0 +1,50 @@
+DEFINITION MODULE ListaOrdenLinea;
+(*******************************************************************************
+Módulo de definicion de ListaOrdenLinea.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM OrdenLinea      IMPORT OrdenLinea;
+
+TYPE
+      ListaOrdenLinea; (* OPACO *)
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearListaOrdenLinea (): ListaOrdenLinea;
+(* Crea la lista vacia. *)
+
+PROCEDURE AgregarListaOrdenLinea (o: OrdenLinea; VAR l: ListaOrdenLinea);
+(* Agrega el orden linea 'o' al final de la lista 'l'. *)
+
+
+
+(************ Predicados ****************)
+
+PROCEDURE EsVaciaListaOrdenLinea (l: ListaOrdenLinea): BOOLEAN;
+(* Devuelve TRUE si la lista 'l' es vacia, FALSE en otro caso. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerPrimeroListaOrdenLinea (l: ListaOrdenLinea): OrdenLinea;
+(* Precondicion: NOT EsVaciaListaOrdenLinea (l).
+   Devuelve el primer elemento de la lista 'l'. *)
+
+PROCEDURE ObtenerRestoListaOrdenLinea (l: ListaOrdenLinea): ListaOrdenLinea;
+(* Precondicion: NOT EsVaciaListaOrdenLinea (l)
+   Devuelve el resto de la lista 'l'. *)
+
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirListaOrdenLinea (VAR l: ListaOrdenLinea);
+(* Libera la memoria reservada para la lista 'l'. *)
+
+END ListaOrdenLinea.

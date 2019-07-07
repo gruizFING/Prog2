@@ -1,0 +1,30 @@
+% XDS project file
+
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\Avion.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\Cliente.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\DicAviones.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\Fecha.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\Historial.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\Linea.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\ListaLineas.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\ListaClientes.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\MovimientoCliente.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\Fecha.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\MovimientoCliente.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\Linea.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\DicAviones.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\ListaLineas.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\Cliente.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\Historial.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\ListaClientes.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\Comando.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\ImpresionResultado.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\ListaVuelos.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\Manejador.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\Vuelo.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\VuelosFuturos.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\DEF\VuelosHoy.def
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\AeroProg2.mod
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\Comando.lib
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\ImpresionResultado.lib
+!module C:\Users\german\Documents\prog2\Laboratorio2\Proyecto\SRC\VuelosHoy.mod

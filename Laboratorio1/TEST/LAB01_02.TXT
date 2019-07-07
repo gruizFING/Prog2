@@ -1,0 +1,17 @@
+sumar 4 3
+Comando leido: sumar
+Con los siguientes parametros: 4,3
+imprimir datos
+Comando leido: imprimir
+Con los siguientes parametros: datos
+conectar terminal servidor
+Comando leido: conectar
+Con los siguientes parametros: terminal,servidor
+pausa
+Comando leido: pausa
+Sin parametros
+sumar 1 2 3 4
+Comando leido: sumar
+Con los siguientes parametros: 1,2,3,4
+salir
+Fin!

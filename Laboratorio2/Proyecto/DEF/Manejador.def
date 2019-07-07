@@ -1,0 +1,101 @@
+DEFINITION MODULE Manejador;
+(*******************************************************************************
+Módulo de definicion de Manejador.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Avion      IMPORT TRangoIdAvion, TDscAvion, TRangoAsiento, TClaseAsiento;
+FROM Cliente    IMPORT TNomCliente, TApellCliente, TIdNacionalidad, TIdPasaporte;
+FROM Fecha      IMPORT Fecha, TDiaSemana;
+FROM Linea      IMPORT TIdLinea, TIdAeropuerto, TTipoLinea, TDuracion, TModoPago;
+
+FROM ImpresionResultado IMPORT ImpresionResultado;
+
+
+
+
+TYPE
+      Manejador; (* OPACO *)
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearManejador (): Manejador;
+
+
+(****************************************)
+
+(* Por comentarios sobre estos procedimientos referirse a la letra de la tarea *)
+
+
+PROCEDURE AltaCliente (pais: TIdNacionalidad; pasaporte: TIdPasaporte; 
+                       nombre: TNomCliente; apellido: TApellCliente;  
+                       VAR man: Manejador;      VAR ir: ImpresionResultado);
+                                    
+
+PROCEDURE AltaAvion (cantAsientoPrimera, cantAsientoTurista: TRangoAsiento; 
+                     dsc: TDscAvion;
+                     VAR man: Manejador; VAR ir: ImpresionResultado);
+
+                              
+PROCEDURE AltaLinea (idLin: TIdLinea; idAv: TRangoIdAvion; 
+                     orig, dest: TIdAeropuerto;
+                     hora: CARDINAL; dur: TDuracion; tipo: TTipoLinea; 
+                     dia: TDiaSemana;
+                     VAR man: Manejador; VAR ir: ImpresionResultado);
+                              
+
+PROCEDURE Iniciar (f: Fecha; VAR man: Manejador; VAR ir: ImpresionResultado);
+
+
+PROCEDURE SiguienteDia (VAR man: Manejador; VAR ir: ImpresionResultado);
+
+
+
+PROCEDURE Comprar (pais: TIdNacionalidad; pasaporte: TIdPasaporte; 
+                   idLin: TIdLinea; f: Fecha; modo: TModoPago; 
+                   clase: TClaseAsiento; numero: CARDINAL;
+                   VAR man: Manejador; VAR ir: ImpresionResultado);
+                              
+
+PROCEDURE Reservar (pais: TIdNacionalidad; pasaporte: TIdPasaporte; 
+                    idLin: TIdLinea; f: Fecha;
+                    clase: TClaseAsiento; numero: CARDINAL;
+                    VAR man: Manejador; VAR ir: ImpresionResultado);
+
+PROCEDURE Cancelar (pais: TIdNacionalidad; pasaporte: TIdPasaporte; 
+                    idLin: TIdLinea; f: Fecha;
+                    clase: TClaseAsiento; numero: CARDINAL;      
+                    VAR man: Manejador; VAR ir: ImpresionResultado);
+
+
+PROCEDURE ListarClientes (man: Manejador);
+
+
+PROCEDURE ListarLineas (man: Manejador);
+
+
+PROCEDURE ListarVuelosHoy(man : Manejador; VAR ir: ImpresionResultado);
+
+
+
+PROCEDURE InfoCliente (pais: TIdNacionalidad; pasaporte: TIdPasaporte; 
+                       man: Manejador; VAR ir: ImpresionResultado);
+
+
+PROCEDURE InfoLinea (idLin: TIdLinea; man: Manejador; VAR ir: ImpresionResultado);
+
+
+PROCEDURE InfoVuelo (idLin: TIdLinea; f: Fecha; 
+                     man: Manejador; VAR ir: ImpresionResultado);
+
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirManejador (VAR man: Manejador);
+
+
+END Manejador.

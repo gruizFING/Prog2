@@ -1,0 +1,38 @@
+DEFINITION MODULE OrdenLinea;
+(*******************************************************************************
+Módulo de definicion de OrdenLinea.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+TYPE
+      OrdenLinea;      (* OPACO *)      
+      TOrdenarPor = ( ORDEN_ID, ORDEN_AVION, ORDEN_ORIGEN, ORDEN_DESTINO,
+                      ORDEN_HORA, ORDEN_DURACION );                  
+      TOrdenForma = ( ASC, DSC );
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearOrdenLinea (por: TOrdenarPor; forma: TOrdenForma): OrdenLinea;
+(* Crea el orden de la linea por el atributo 'por' y de la forma 'forma'. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerPorOrdenLinea (o: OrdenLinea): TOrdenarPor;
+(* Devuelve el atributo por el cual ordena 'o'. *)
+
+PROCEDURE ObtenerFormaOrdenLinea (o: OrdenLinea): TOrdenForma;
+(* Devuelve la forma por la cual ordena 'o'. *)
+
+
+(************ Destructoras *************)
+
+PROCEDURE DestruirOrdenLinea (VAR o: OrdenLinea);
+(* Libera la memoria reservada por el orden linea 'o'. *)
+
+END OrdenLinea.

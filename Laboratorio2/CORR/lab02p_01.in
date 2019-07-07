@@ -1,0 +1,20 @@
+altaAvion 16 200 BOEING777
+altaLinea CELESTE 0 MVD JNB 1000 1320 SEMANAL MIERCOLES
+iniciar 20100510
+altaCliente 'Oscar Washington' 'Tabarez' 1244899 UY
+compra CELESTE 20100609 1244899 UY EFECTIVO PRIMERA
+altaCliente 'Diego' 'Forlan' 3240765 UY
+compra CELESTE 20100609 3240765 UY EFECTIVO PRIMERA 7
+altaCliente 'Diego' 'Lugano' 3965231 UY
+compra CELESTE 20100609 3965231 UY EFECTIVO PRIMERA
+siguienteDia
+siguienteDia
+altaCliente 'Egidio' 'Arevalo Rios' 2889746 UY
+reserva CELESTE 20100609 2889746 UY PRIMERA 5
+altaCliente 'Washington' 'Abreu' 4263007 UY
+reserva CELESTE 20100609 4263007 UY PRIMERA 13
+siguienteDia
+cancela CELESTE 20100609 4263007 UY PRIMERA 13
+altaCliente 'Antonio' 'Pacheco' 2976492 UY
+compra CELESTE 20100609 2976492 UY EFECTIVO PRIMERA
+salir

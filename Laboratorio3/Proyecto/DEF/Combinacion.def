@@ -1,0 +1,73 @@
+DEFINITION MODULE Combinacion;
+(*******************************************************************************
+Módulo de definición del TAD Combinacion.
+
+Laboratorio de Programación 2.
+InCo-FIng-UDELAR
+*******************************************************************************)
+
+FROM Avion            IMPORT TClaseAsiento;
+FROM Linea            IMPORT TIdAeropuerto;
+FROM ListaTramo       IMPORT ListaTramo;
+FROM Tramo            IMPORT Tramo;
+
+TYPE
+      Combinacion;      (* Opaco *)
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearCombinacion(): Combinacion;
+(* Crea una combinacion vacia. *)
+
+PROCEDURE CopiaCombinacion (c: Combinacion): Combinacion;
+(* Devuelve una copia limpia de la combinacion 'c'. *)
+
+PROCEDURE PonerTramoCombinacion (t: Tramo; VAR c: Combinacion);
+(* Agrega un tramo 't' al final de la combinacion.
+   Esta operacion debe ser de orden 1. *)
+
+
+
+(************ Predicados ****************)
+
+PROCEDURE EsVaciaCombinacion (c: Combinacion): BOOLEAN;
+(* Devuelve TRUE si la combinacion es vacia, FALSE en otro caso. *)
+
+PROCEDURE ExisteAeropuertoCombinacion (aero: TIdAeropuerto; 
+                                       c: Combinacion): BOOLEAN;
+(* Devuelve TRUE si el aeropuerto existe en la combinacion como origen o
+   destino de alguno de los tramos que forman esta combinacion, 
+   FALSE en otro caso. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerUltimoCombinacion (c: Combinacion): Tramo;
+(* Precondicion: NOT EsVaciaCombinacion (c).
+   Devuelve el ultimo tramo de la combinacion 'c'.
+   Esta operacion debe ser de orden 1. *)
+
+PROCEDURE ObtenerTramosCombinacion (c: Combinacion): ListaTramo;
+(* Retorna una lista con los tramos de la combinacion en el orden en que 
+	fueron agregados a 'c'. *)
+
+PROCEDURE ObtenerPrecioCombinacion (c: Combinacion; 
+                                    clase: TClaseAsiento): CARDINAL;
+(* Retorna el precio de la combinacion segun la clase en la que se 
+   desea viajar. *)
+
+
+
+(************ Destructoras ****************)
+
+PROCEDURE SacarTramoCombinacion (VAR c: Combinacion);
+(* Remueve el tramo al final de la combinacion 'c'.
+   Esta operacion debe ser de orden 1. *)
+
+PROCEDURE DestruirCombinacion (VAR c: Combinacion);
+(* Libera la memoria reservada para la combinacion 'c'. *)
+      
+END Combinacion.

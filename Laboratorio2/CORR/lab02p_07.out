@@ -1,0 +1,48 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>Fecha 20101229 inicializada.
+>Avion 0 ingresado.
+>Linea INCO100 ingresada.
+>Linea INCO101 ingresada.
+>Cliente 1234567-UY ingresado.
+>Cliente 1234568-BG ingresado.
+>Asiento 3-TURISTA-20101231-INCO100 resevado a 1234567-UY.
+>Asiento 10-TURISTA-20101231-INCO100 vendido a 1234568-BG.
+Costo: 1800-EFECTIVO. Puntos: 225.
+>Asiento 5-TURISTA-20110102-INCO101 resevado a 1234568-BG.
+>Fecha actual 20101230. Reservas liberadas: 1.
+>Asiento 1-PRIMERA-20101231-INCO100 vendido a 1234567-UY.
+Costo: 2700-EFECTIVO. Puntos: 337.
+>Fecha actual 20101231. Reservas liberadas: 0.
+>Planilla de Vuelos que Salen Hoy:
+Linea: INCO100-0-10-100-BUSINESSJET-MVD-PEK-1100-1350-SEMANAL VIERNES.
+Primera:
+Asiento: 1-Cliente: 'Yolanda'-'Rivas'-1234567-UY
+Turista:
+Asiento: 10-Cliente: 'Kevin'-'Johansen'-1234568-BG
+>Reserva 5-TURISTA-20110102-INCO101-1234568-BG cancelada.
+>Fecha actual 20110101. Reservas liberadas: 0.
+>Asiento 1-TURISTA-20110102-INCO101 vendido a 1234568-BG.
+Costo: 1800-EFECTIVO. Puntos: 225.
+>Asiento 1-PRIMERA-20110102-INCO101 vendido a 1234567-UY.
+Costo: 2700-EFECTIVO. Puntos: 337.
+>Fecha actual 20110102. Reservas liberadas: 0.
+>Planilla de Vuelos que Salen Hoy:
+Linea: INCO101-0-10-100-BUSINESSJET-PEK-MVD-2200-1350-SEMANAL DOMINGO.
+Primera:
+Asiento: 1-Cliente: 'Yolanda'-'Rivas'-1234567-UY
+Turista:
+Asiento: 1-Cliente: 'Kevin'-'Johansen'-1234568-BG
+>Cliente: 'Yolanda'-'Rivas'-1234567-UY-449.
+Movimientos:
+3-TURISTA-20101231-INCO100-MULTA
+1-PRIMERA-20101231-INCO100-COMPRA
+1-PRIMERA-20110102-INCO101-COMPRA
+>Cliente: 'Kevin'-'Johansen'-1234568-BG-450.
+Movimientos:
+10-TURISTA-20101231-INCO100-COMPRA
+5-TURISTA-20110102-INCO101-CANCELA
+1-TURISTA-20110102-INCO101-COMPRA
+>Fin!

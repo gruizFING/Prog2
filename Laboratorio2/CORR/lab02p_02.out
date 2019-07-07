@@ -1,0 +1,42 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>Clientes:
+>Lineas:
+>Cliente TTTTTTT-UY ingresado.
+>ERROR: Existe un cliente con pasaporte TTTTTTT y nacionalidad UY.
+>ERROR: Existe un cliente con pasaporte TTTTTTT y nacionalidad UY.
+>Cliente TTTTTT-UY ingresado.
+>Cliente TTTTTTt-UY ingresado.
+>Clientes:
+TTTTTTT-UY
+TTTTTT-UY
+TTTTTTt-UY
+>Cliente: 'JuaN MarTin'-'MartinEz'-TTTTTT-UY-0.
+Movimientos:
+>ERROR: Cliente TTTTT-UY no ingresado.
+>Avion 0 ingresado.
+>Linea HARRIER1 ingresada.
+>Linea HARRIER2 ingresada.
+>Linea HARRIER3 ingresada.
+>Linea HARRIER4 ingresada.
+>Linea HARRIER5 ingresada.
+>Linea HARRIER6 ingresada.
+>Linea HARRIER7 ingresada.
+>Linea HARRIER8 ingresada.
+>Linea: HARRIER3-0-1-1-HARRIER-MVD-KSQ-0600-360-SEMANAL LUNES.
+>ERROR: Fecha no inicializada.
+>Fecha 20100421 inicializada.
+>Linea: HARRIER3-0-1-1-HARRIER-MVD-KSQ-0600-360-SEMANAL LUNES.
+>Asiento 1-PRIMERA-20100426-HARRIER3 resevado a TTTTTTt-UY.
+>ERROR: Asiento 1-PRIMERA-20100426-HARRIER3 no disponible.
+>Asiento 1-TURISTA-20100426-HARRIER3 resevado a TTTTTTt-UY.
+>Cliente: 'Juan Martin'-'Martinez'-TTTTTTt-UY-0.
+Movimientos:
+1-PRIMERA-20100426-HARRIER3-RESERVA
+1-TURISTA-20100426-HARRIER3-RESERVA
+>ERROR: No existe vuelo 20100427-HARRIER3.
+>ERROR: Asiento 1-PRIMERA-20100426-HARRIER3 no disponible.
+>Asiento 1-PRIMERA-20100426-HARRIER4 resevado a TTTTTTt-UY.
+>Fin!

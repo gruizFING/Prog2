@@ -1,0 +1,174 @@
+DEFINITION MODULE VuelosFuturos;
+(*******************************************************************************
+Módulo de definicion de VuelosFuturos.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Avion            IMPORT TRangoAsiento, TAsiento, TClaseAsiento;
+FROM Cliente          IMPORT Cliente;
+FROM Fecha            IMPORT Fecha ;
+FROM Linea            IMPORT Linea;
+FROM ListaVuelos      IMPORT ListaVuelos;
+
+
+TYPE
+      VuelosFuturos ; (* OPACO *)
+
+
+(************ Constructoras *************)
+PROCEDURE CrearVuelosFuturos (): VuelosFuturos;
+(* Crea un VuelosFuturos vacio *)
+
+ 
+PROCEDURE ComprarVuelosFuturos (cli: Cliente;  lin: Linea; f: Fecha;
+                                asiento: TAsiento; 
+                                VAR vF: VuelosFuturos): TRangoAsiento;
+(* Precondiciones: 
+            La fecha 'f' es valida para la linea 'idLin'.
+            0 <= 'asiento.num' <= cantidad de asientos en clase 'asiento.clase'
+            del avion correspondiente a la linea 'lin'.
+
+            Si ('asiento.num' <> 0) 
+                => El asiento 'asiento' esta reservado al cliente 'cli' 
+                   o disponible.
+                          
+            Si ('asiento.num' = 0) 
+                => HayDisponiblesVuelosFuturos (lin, f, asiento.clase, vF) > 0.
+        
+            
+            Si no existe un vuelo de linea 'lin', y fecha 'f', crea el vuelo.
+            En el vuelo identificado por 'lin' y 'f' compra para el cliente 
+            'cli' un asiento en clase 'asiento.clase'. 
+
+            Si ('asiento.num' <> 0)  el asiento comprado es 'asiento.num'.
+
+            Si ('asiento.num' = 0)  el asiento comprado es el disponible de 
+            numero mas bajo.
+            
+            Devuelve el numero de asiento comprado.
+*)
+
+PROCEDURE ReservarVuelosFuturos (cli: Cliente; lin: Linea; f: Fecha;
+                                 asiento: TAsiento; 
+                                 VAR vF: VuelosFuturos): TRangoAsiento;
+(* Precondiciones: 
+            La fecha 'f' es valida para la linea 'idLin'.
+            0 <= 'asiento.num' <= cantidad de asientos en la clase 
+            'asiento.clase' del avion correspondiente a la linea 'lin'.
+
+            Si ('asiento.num' <> 0) 
+               => El asiento 'asiento' en clase 'asiento.clase' esta disponible.
+            Si (asiento.num = 0) 
+               => HayDisponiblesVuelosFuturos (lin, f, asiento.clase, vF) > 0.
+            
+            
+            Si no existe un vuelo de linea 'lin', y fecha 'f', crea el vuelo.
+            En el vuelo identificado por 'lin' y 'f' reserva para el 
+            cliente 'cli' un asiento en clase 'asiento.clase'. 
+
+            Si ('asiento.num' <> 0)  el asiento reservado es 'asiento.num'.
+
+            Si ('asiento.num' = 0)  el asiento reservado es el disponible 
+            de numero mas bajo.
+            
+            Devuelve el numero de asiento reservado.
+*)
+
+
+PROCEDURE CancelarVuelosFuturos (cli: Cliente; lin: Linea; f: Fecha;
+                              asiento: TAsiento; VAR vF: VuelosFuturos);
+(* Precondiciones: 
+            La fecha 'f' es valida para la linea 'lin'.
+            1 <= 'asiento.num' <= cantidad de asientos en clase 
+            'asiento.clase' del avion correspondiente a la linea 'lin'.
+
+            El asiento tiene que haber sido reservado por el cliente 'cli'.
+            
+            En el vuelo identificado por 'lin' y 'f' cancela la reserva.
+      
+            Si al cancelar, no quedan asientos reservados o comprados, 
+            remueve el vuelo de 'vF'.
+*)
+
+
+
+ 
+PROCEDURE SepararHastaFechaVuelosFuturos (f: Fecha; 
+                                          VAR vF: VuelosFuturos): ListaVuelos;
+(* Elimina de 'vF' los vuelos anteriores a la fecha 'f' y 
+   remueve de 'vF' los vuelos con fecha  igual a 'f'.
+   Devuelve una lista con los vuelos removidos.
+*)
+
+PROCEDURE AnularReservasVuelosFuturos (f: Fecha; VAR vF: VuelosFuturos;
+                                       VAR cantTurista, 
+                                           cantPrimera: CARDINAL);
+(* 
+      Precondicion: no hay vuelos anteriores a 'f'.
+      
+      Anula todas las reservas que haya en los vuelos de fecha 'f' en 'vF'.
+      Actualiza el historial y el puntaje de los clientes afectados de 
+      acuerdo a las reglas de la letra de la tarea.
+      
+      Cada vuelo que queda sin reservas o compras se elimina de 'vF'.
+*)
+
+
+(************ Predicados   **************)
+
+
+
+PROCEDURE EstaCompradoClienteVuelosFuturos(cli: Cliente; linea: Linea; f: Fecha;
+                                           asiento: TAsiento; 
+                                           vF: VuelosFuturos): BOOLEAN;
+(* Precondicion: existe un vuelo para la fecha 'f' y linea 'linea'.
+   Devuelve FALSE en caso que el asiento 'asiento' no fue comprado por 
+   el cliente 'cli' en el vuelo especificado.
+   Devuelve TRUE en el caso contrario
+*)                               
+
+
+PROCEDURE EstaReservadoClienteVuelosFuturos(cli: Cliente; linea: Linea; 
+                                            f: Fecha; asiento: TAsiento; 
+                                            vF: VuelosFuturos): BOOLEAN;
+(* Precondicion: existe un vuelo para la fecha 'f' y linea 'linea'.
+   Devuelve FALSE en caso que el asiento 'asiento' no fue reservado por 
+   el cliente 'cli' en el vuelo especificado.
+   Devuelve TRUE en el caso contrario
+*)       
+
+
+PROCEDURE EstaDisponibleAsientoVuelosFuturos (linea: Linea; f: Fecha;
+                                              asiento: TAsiento; 
+                                              vF: VuelosFuturos): BOOLEAN;
+(* Precondicion: existe un vuelo para la fecha 'f' y linea 'linea'.
+   Devuelve FALSE en caso que el asiento 'asiento' no esta disponible 
+   en el vuelo especificado.
+   Devuelve TRUE en el caso contrario 
+*)       
+
+
+PROCEDURE HayDisponiblesVuelosFuturos (linea: Linea; f: Fecha; 
+                                       clase: TClaseAsiento; 
+                                       vF: VuelosFuturos): BOOLEAN;   
+(* Precondicion: existe un vuelo para la fecha 'f' y linea 'linea'.
+   Devuelve TRUE si el vuelo identificado por 'linea' y 'f' tiene asientos 
+   disponibles en la clase 'clase' 
+*)   
+   
+PROCEDURE ImprimirInfoVueloVuelosFuturos(linea: Linea; f: Fecha; 
+                                         vf:VuelosFuturos);
+ (* Precondicion: existe un vuelo para la fecha 'f' y linea 'linea'.
+    Imprime en la salida estandar la información del Vuelo *)
+
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirVuelosFuturos (VAR vF: VuelosFuturos);
+(* Destruye todos los vuelos futuros *)
+ 
+
+END VuelosFuturos.

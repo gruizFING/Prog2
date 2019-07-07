@@ -1,0 +1,19 @@
+1
+Avion: 0-10-100-Avion.
+13
+Linea: linea0-0-o0-d0-0000-1-SEMANAL DOMINGO.
+Linea: linea1-0-o1-d1-0001-1-DIARIA.
+Linea: linea2-0-o2-d2-0002-2-SEMANAL LUNES.
+Linea: linea3-0-o1-d3-0003-3-DIARIA.
+Linea: linea4-0-o4-d4-0004-4-SEMANAL MARTES.
+Linea: linea5-0-d3-d1-0010-5-DIARIA.
+Linea: linea6-0-o6-d6-0006-6-SEMANAL MIERCOLES.
+Linea: linea7-0-o1-d1-0007-7-DIARIA.
+Linea: linea8-0-o8-d8-0008-8-SEMANAL JUEVES.
+Linea: linea9-0-o1-d1-0009-9-DIARIA.
+Linea: linea10-0-o10-d10-0010-10-SEMANAL VIERNES.
+Linea: linea11-0-o1-d1-0011-11-DIARIA.
+Linea: linea12-0-o12-d12-0012-12-SEMANAL SABADO.
+0
+20100416
+0

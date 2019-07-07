@@ -1,0 +1,13 @@
+/sys=C
+/debug
+/stack=100000
+/name=PruebaMovimentioCliente.exe
+obj\Avion.obj
+obj\Fecha.obj
+obj\Linea.obj
+obj\MovimientoCliente.obj
+obj\PruebaMovimientoCliente.obj
+C:\XDS\lib\x86\xstart.lib
+C:\XDS\lib\x86\libxds.lib
+C:\XDS\lib\x86\import32.lib
+

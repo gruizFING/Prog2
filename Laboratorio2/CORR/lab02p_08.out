@@ -1,0 +1,34 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>Fecha 20100508 inicializada.
+>Cliente 1234567-IT ingresado.
+>Cliente 7654321-IT ingresado.
+>Cliente 1952985-JP ingresado.
+>Avion 0 ingresado.
+>Avion 1 ingresado.
+>Linea INCO100 ingresada.
+>Linea IMERL100 ingresada.
+>Asiento 3-TURISTA-20100511-INCO100 resevado a 1234567-IT.
+>ERROR: No existe vuelo 20100512-INCO100.
+>Asiento 2-PRIMERA-20100520-IMERL100 vendido a 1952985-JP.
+Costo: 200-EFECTIVO. Puntos: 25.
+>Reserva 3-TURISTA-20100511-INCO100-1234567-IT cancelada.
+>ERROR: No existe vuelo 20100512-INCO100.
+>Fecha actual 20100509. Reservas liberadas: 0.
+>Cliente: 'Mario'-'Fontanes'-1234567-IT-0.
+Movimientos:
+3-TURISTA-20100511-INCO100-CANCELA
+>Cliente: 'Shigeru'-'Tuyamoto'-1952985-JP-25.
+Movimientos:
+2-PRIMERA-20100520-IMERL100-COMPRA
+>ERROR: No existe una linea con identificador INCO101.
+>Clientes:
+1234567-IT
+7654321-IT
+1952985-JP
+>Lineas:
+IMERL100
+INCO100
+>Fin!

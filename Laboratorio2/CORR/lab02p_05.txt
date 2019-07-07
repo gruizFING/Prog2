@@ -1,0 +1,74 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>altaCliente 'Roberto' 'Gomez' 1863456 UY
+Cliente 1863456-UY ingresado.
+>altaAvion 10 100 AIRBUSA300
+Avion 0 ingresado.
+>altaLinea INCO200 0 MVD EZE 1400 300 DIARIA
+Linea INCO200 ingresada.
+>altaLinea INCO237 0 MVD MAD 2030 60 SEMANAL VIERNES
+Linea INCO237 ingresada.
+>iniciar 20100427
+Fecha 20100427 inicializada.
+>reserva INCO200 20100429 1863456 UY TURISTA 3
+Asiento 3-TURISTA-20100429-INCO200 resevado a 1863456-UY.
+>reserva INCO200 20100429 1863456 UY TURISTA
+Asiento 1-TURISTA-20100429-INCO200 resevado a 1863456-UY.
+>reserva INCO237 20100430 1863456 UY PRIMERA 9
+Asiento 9-PRIMERA-20100430-INCO237 resevado a 1863456-UY.
+>compra INCO200 20100429 1863456 UY EFECTIVO TURISTA
+Asiento 2-TURISTA-20100429-INCO200 vendido a 1863456-UY.
+Costo: 400-EFECTIVO. Puntos: 50.
+>compra INCO200 20100429 1863456 UY EFECTIVO TURISTA 1
+Asiento 1-TURISTA-20100429-INCO200 vendido a 1863456-UY.
+Costo: 400-EFECTIVO. Puntos: 50.
+>cancela INCO237 20100430 1863456 UY PRIMERA 9
+Reserva 9-PRIMERA-20100430-INCO237-1863456-UY cancelada.
+>reserva INCO237 20100430 1863456 UY PRIMERA 9
+Asiento 9-PRIMERA-20100430-INCO237 resevado a 1863456-UY.
+>cancela INCO237 20100430 1863456 UY PRIMERA 9
+Reserva 9-PRIMERA-20100430-INCO237-1863456-UY cancelada.
+>reserva INCO237 20100430 1863456 UY PRIMERA 9
+Asiento 9-PRIMERA-20100430-INCO237 resevado a 1863456-UY.
+>reserva INCO237 20100430 1863456 UY TURISTA 9
+Asiento 9-TURISTA-20100430-INCO237 resevado a 1863456-UY.
+>compra INCO237 20100430 1863456 UY PUNTOS TURISTA 9
+Asiento 9-TURISTA-20100430-INCO237 vendido a 1863456-UY.
+Costo: 100-PUNTOS. Puntos: 10.
+>siguienteDia
+Fecha actual 20100428. Reservas liberadas: 1.
+>siguienteDia
+Fecha actual 20100429. Reservas liberadas: 1.
+>listarVuelosHoy
+Planilla de Vuelos que Salen Hoy:
+Linea: INCO200-0-10-100-AIRBUSA300-MVD-EZE-1400-300-DIARIA.
+Primera:
+Turista:
+Asiento: 1-Cliente: 'Roberto'-'Gomez'-1863456-UY
+Asiento: 2-Cliente: 'Roberto'-'Gomez'-1863456-UY
+>siguienteDia
+Fecha actual 20100430. Reservas liberadas: 0.
+>listarVuelosHoy
+Planilla de Vuelos que Salen Hoy:
+Linea: INCO237-0-10-100-AIRBUSA300-MVD-MAD-2030-60-SEMANAL VIERNES.
+Primera:
+Turista:
+Asiento: 9-Cliente: 'Roberto'-'Gomez'-1863456-UY
+>siguienteDia
+Fecha actual 20100501. Reservas liberadas: 0.
+>siguienteDia
+Fecha actual 20100502. Reservas liberadas: 0.
+>infoCliente 1863456 UY
+Cliente: 'Roberto'-'Gomez'-1863456-UY--55.
+Movimientos:
+3-TURISTA-20100429-INCO200-MULTA
+1-TURISTA-20100429-INCO200-COMPRA
+9-PRIMERA-20100430-INCO237-CANCELA
+2-TURISTA-20100429-INCO200-COMPRA
+9-PRIMERA-20100430-INCO237-CANCELA
+9-PRIMERA-20100430-INCO237-MULTA
+9-TURISTA-20100430-INCO237-COMPRA
+>salir
+Fin!

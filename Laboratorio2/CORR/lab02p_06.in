@@ -1,0 +1,20 @@
+altaCliente 'nom1' 'ape1' 1111111 UY
+altaCliente 'nom2' 'ape2' 2222222 UY
+altaCliente 'nom3' 'ape3' 3333333 UY
+altaAvion 1 2 avion
+altaLinea linea 0 origen destino 0000 10 DIARIA
+iniciar 20100401
+reserva linea 20100403 1111111 UY PRIMERA
+reserva linea 20100403 2222222 UY PRIMERA
+reserva linea 20100403 2222222 UY TURISTA
+compra linea 20100403 3333333 UY EFECTIVO TURISTA
+cancela linea 20100403 1111111 UY PRIMERA 1
+cancela linea 20100403 2222222 UY TURISTA 1
+reserva linea 20100403 1111111 UY TURISTA
+compra linea 20100403 2222222 UY EFECTIVO PRIMERA
+siguienteDia
+siguienteDia
+listarVuelosHoy
+listarClientes
+listarLineas
+salir

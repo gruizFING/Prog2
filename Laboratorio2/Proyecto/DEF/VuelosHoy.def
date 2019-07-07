@@ -1,0 +1,41 @@
+DEFINITION MODULE VuelosHoy;
+(*******************************************************************************
+Módulo de implementación de VuelosHoy.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM ListaVuelos IMPORT ListaVuelos;
+
+TYPE
+      VuelosHoy;(*opaco*)
+      
+      
+
+(************ Constructoras *************)
+
+PROCEDURE CrearVuelosHoy ():VuelosHoy;
+(* Crea un VuelosHoy vacio *)
+
+PROCEDURE SuplantarVuelosHoy(list : ListaVuelos; VAR vuelosHoy : VuelosHoy);
+(* Asigna a 'vuelosHoy' la lista de vuelos 'list'.
+   Se elimina la lista anterior. *)
+
+PROCEDURE ListarVuelosVuelosHoy (vH: VuelosHoy);
+(* Se listan en la salida estandar los vuelos que salen en el dia ('vH' ) de
+   acuerdo al formato especificado en la letra de la tarea. *)
+
+
+(************ Selectoras ****************)
+
+PROCEDURE EsVacioVuelosHoy(v:VuelosHoy):BOOLEAN;
+(* Devuelve TRUE si 'v' es vacio y FALSE en caso contrario *)
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirVuelosHoy ( VAR vH: VuelosHoy);
+(* Libera la memoria asociada a 'vH' *)
+
+END VuelosHoy.

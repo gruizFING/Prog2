@@ -1,0 +1,46 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>Cliente 1863456-UY ingresado.
+>Avion 0 ingresado.
+>Linea MVDEZE ingresada.
+>Linea MVDRIO ingresada.
+>Linea EZERIO ingresada.
+>Lineas:
+EZERIO
+MVDEZE
+MVDRIO
+>Fecha 20100421 inicializada.
+>Asiento 10-PRIMERA-20100423-EZERIO resevado a 1863456-UY.
+>Asiento 100-TURISTA-20100423-MVDEZE resevado a 1863456-UY.
+>Asiento 2-PRIMERA-20100423-MVDRIO resevado a 1863456-UY.
+>Asiento 1-PRIMERA-20100423-MVDRIO vendido a 1863456-UY.
+Costo: 600-EFECTIVO. Puntos: 75.
+>Asiento 2-PRIMERA-20100423-MVDRIO vendido a 1863456-UY.
+Costo: 600-EFECTIVO. Puntos: 75.
+>Reserva 10-PRIMERA-20100423-EZERIO-1863456-UY cancelada.
+>Asiento 1-PRIMERA-20100424-EZERIO resevado a 1863456-UY.
+>Fecha actual 20100422. Reservas liberadas: 1.
+>Asiento 100-TURISTA-20100423-MVDEZE vendido a 1863456-UY.
+Costo: 100-PUNTOS. Puntos: 10.
+>Fecha actual 20100423. Reservas liberadas: 1.
+>Planilla de Vuelos que Salen Hoy:
+Linea: MVDRIO-0-10-100-AIRBUSA300-MVD-RIO-1400-300-SEMANAL VIERNES.
+Primera:
+Asiento: 1-Cliente: 'Roberto'-'Gomez'-1863456-UY
+Asiento: 2-Cliente: 'Roberto'-'Gomez'-1863456-UY
+Turista:
+Linea: MVDEZE-0-10-100-AIRBUSA300-MVD-EZE-1400-60-DIARIA.
+Primera:
+Turista:
+Asiento: 100-Cliente: 'Roberto'-'Gomez'-1863456-UY
+>Cliente: 'Roberto'-'Gomez'-1863456-UY--10.
+Movimientos:
+10-PRIMERA-20100423-EZERIO-CANCELA
+100-TURISTA-20100423-MVDEZE-MULTA
+2-PRIMERA-20100423-MVDRIO-COMPRA
+1-PRIMERA-20100423-MVDRIO-COMPRA
+1-PRIMERA-20100424-EZERIO-MULTA
+100-TURISTA-20100423-MVDEZE-COMPRA
+>Fin!

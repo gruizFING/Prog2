@@ -1,0 +1,78 @@
+DEFINITION MODULE ImpresionResultado;
+(*******************************************************************************
+Módulo de definicion del TAD ImpresionResultado.
+
+Laboratorio de Programación 2.
+InCo-FIng-UDELAR
+
+El tipo abstracto ImpresionResultado se encarga de imprimir en la salida 
+estandar los resultados de la ejecución de los comandos del programa. 
+Para esto se asigna el codigo de resultado a imprimir y sus parametros 
+en caso de que corresponda.
+*******************************************************************************)
+
+
+TYPE
+      CodigoResultado = (
+            ALTA_CLIENTE,
+            ERROR_CLIENTE_EXISTENTE,
+            ALTA_AVION,
+            ALTA_LINEA,
+            ERROR_AVION_NO_EXISTE,
+            ERROR_LINEA_EXISTENTE, 
+            INICIAR,
+            ERROR_FECHA_YA_INICIALIZADA,
+            CANCELAR,
+            ERROR_LINEA_FECHA, 
+            ERROR_CLIENTE_NO_EXISTE,
+            SIGUIENTE_DIA,
+            ERROR_LINEA_NO_EXISTE,
+            ERROR_FECHA_NO_INICIALIZADA,
+            ERROR_PUNTOS_INSUFICIENTES_COMPRA, 
+            ERROR_NO_HAY_ASIENTOS_DISPONIBLES, 
+            ERROR_ASIENTO_NO_DISPONIBLE, 
+            ERROR_ASIENTO_NO_RESERVADO_POR_CLIENTE,
+            ERROR_ASIENTO_NO_EXISTE,
+            ERROR_FECHA_TARDIA,
+            VACIO,            
+            ASIENTO_YA_COMPRADO,
+            COMPRAR,
+            RESERVAR,            
+            SALIR
+      );
+
+      ImpresionResultado; (*opaco: definido en el módulo de implementación.*)
+      
+
+(************ Constructoras *************)      
+
+PROCEDURE CrearImpresionResultado(): ImpresionResultado;
+(* Crea y devuelve un resultado a imprimir inicializado con codigo VACIO. *)
+
+PROCEDURE AsignarCodigoImpresionResultado (codigo: CodigoResultado;
+                  VAR iR: ImpresionResultado);
+(* Asigna el codigo 'codigo' al resultado 'iR'. *)
+
+PROCEDURE AsignarParamImpresionResultado (num: CARDINAL; str: ARRAY OF CHAR;
+                  VAR iR: ImpresionResultado);
+(* Precondicion: la cantidad de parametros de 'iR', que se determina por su
+   codigo, debe ser mayor o igual a 'num'. La cantidad de parametros que se
+   corresponde para un codigo se encuentra la letra del laboratorio. 
+   A su vez, se debe cumplir que 'num' >= 1.
+   Asigna la cadena de caracteres 'str' al parametro que ocupa la posicion
+   'num' del mensaje 'iR'. *)
+
+
+(************ Salida *********************)
+
+PROCEDURE ImprimirImpresionResultado (iR: ImpresionResultado);
+(* Imprime el texto correspondiente al tipo del resultado de 'iR' en la salida
+   estandar. *)
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirImpresionResultado (VAR iR: ImpresionResultado);
+(* Libera la memoria reservada para el resultado 'iR'. *)
+
+END ImpresionResultado.

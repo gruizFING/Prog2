@@ -1,0 +1,60 @@
+DEFINITION MODULE ListaLineas;
+(*******************************************************************************
+Módulo de definicion de ListaLineas.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Linea IMPORT Linea, TIdLinea;
+
+TYPE
+        ListaLineas; (* OPACO *)
+        
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearListaLineas (): ListaLineas;
+(* Crea la lista de lineas vacia. *)
+
+PROCEDURE AgregarLineaListaLineas (lin: Linea; VAR l: ListaLineas);
+(* Precondicion: NOT PerteneceLineaListaLineas (ObtenerIdLinea (lin), l)
+   Agrega la linea 'lin' a la lista de lineas 'l', ordenada por 
+   identificador de linea.*)
+
+
+ 
+(************ Predicados ****************)
+
+PROCEDURE EsVaciaListaLineas (l: ListaLineas): BOOLEAN;
+(* Devuelve TRUE si la lista 'l' es vacia y FALSE en otro caso. *)
+
+PROCEDURE PerteneceLineaListaLineas (id: TIdLinea; l: ListaLineas): BOOLEAN;
+(* Devuelve TRUE si existe una linea cuyo identificador sea 'id' en la 
+   lista 'l' y FALSE en otro caso. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerPrimerLineaListaLineas (l: ListaLineas): Linea;
+(* Precondicion: NOT EsVaciaListaLineas (l).
+   Devuelve el primer elemento de la lista 'l'. *)
+
+PROCEDURE ObtenerRestoListaLineas (l: ListaLineas): ListaLineas;
+(* Precondicion: NOT EsVaciaListaLineas (l).
+   Devuelve el resto de la lista 'l'. *)
+
+PROCEDURE ObtenerLineaListaLineas (id: TIdLinea; l: ListaLineas): Linea;
+(* Precondicion: PerteneceLineaListaLineas (id, l).
+   Devuelve la linea cuyo identificador es 'id' de la lista 'l'. *)
+
+
+ 
+(************ Destructoras **************)
+
+PROCEDURE DestruirListaLineas (VAR l: ListaLineas);
+(* Libera la memoria reservada para la lista 'l'. *)
+
+END ListaLineas.

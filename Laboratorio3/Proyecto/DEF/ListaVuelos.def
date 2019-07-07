@@ -1,0 +1,86 @@
+DEFINITION MODULE ListaVuelos;
+(*******************************************************************************
+Módulo de definicion de ListaVuelos.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+
+*******************************************************************************)
+
+FROM Fecha      IMPORT Fecha;
+FROM Linea      IMPORT TIdLinea;
+FROM IOChan		IMPORT ChanId;
+FROM Vuelo      IMPORT Vuelo;
+
+
+TYPE
+      ListaVuelos; (* OPACO *)
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearListaVuelos (): ListaVuelos;
+(* Crea la lista de vuelos vacia. *)
+
+PROCEDURE InsertarVueloListaVuelos (v: Vuelo; VAR l: ListaVuelos);
+(* Precondicion: NOT PerteneceVueloListaVuelos (ObtenerIdVuelo (v),
+                                                ObtenerFechaVuelo(v), l)
+  Agrega el vuelo a la lista.
+   Los vuelos de la lista se ordenan de manera ascendente según la fecha.   
+   Los vuelos de la misma fecha se ordenan de manera ascendente según la hora 
+   de salida.    
+   Si el vuelo a insertar tiene la misma fecha y hora de salida que otros que 
+   ya están en la lista, entonces se inserta después de los que ya estaban.  
+  *) 
+
+ 
+(************ Predicados ****************)
+
+PROCEDURE EsVaciaListaVuelos (l: ListaVuelos): BOOLEAN;
+(* Devuelve TRUE si la lista 'l' es vacia FALSE en otro caso. *)
+
+PROCEDURE PerteneceVueloListaVuelos (linea : TIdLinea; f: Fecha; 
+                                     l: ListaVuelos): BOOLEAN;
+(* Devuelve TRUE si existe un vuelo correspondiente a la linea 'linea' 
+   para la fecha 'f' en la lista 'l' y FALSE en otro caso. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerVueloListaVuelos (linea: TIdLinea; f: Fecha;
+                                   l: ListaVuelos): Vuelo;
+(* Precondicion: PerteneceVueloListaVuelos (linea, f, l).
+   Devuelve el vuelo identificado con la linea 'linea' en la fecha 'f' 
+   de la lista 'l'. *)
+
+PROCEDURE ObtenerPrimerVueloListaVuelos (l: ListaVuelos): Vuelo;
+(* Precondicion: NOT EsVaciaListaVuelos (l).
+   Devuelve el primer elemento de la lista 'l'. *)
+
+PROCEDURE ObtenerRestoListaVuelos (l: ListaVuelos): ListaVuelos;
+(* Precondicion: NOT EsVaciaListaVuelos (l).
+   Devuelve el resto de la lista 'l'. *)
+
+PROCEDURE ObtenerCantVuelosListaVuelos (l: ListaVuelos): CARDINAL;
+(*AGREGADO*)
+(* Devuelve la cantidad de vuelos que tiene la lista de vuelos *)
+
+PROCEDURE ImprimirVuelosListaVuelos (arch : ChanId; lVuelo: ListaVuelos);
+(*AGREGADO*)
+(* Precondicion: arch no esta vacio, ya se encuentra inicilizado
+   Imprime los vuelos en el formato que se dió en la letra  *)
+
+ 
+(************ Destructoras **************)
+
+PROCEDURE EliminarVueloListaVuelos (linea: TIdLinea; f: Fecha; 
+                                    VAR l: ListaVuelos);
+(* Precondicion: PerteneceVueloListaVuelos (linea, f, l).
+   Remueve de la lista 'l' el vuelo cuyo identificador es 'id' y 
+   fecha es 'f'. *)
+
+PROCEDURE DestruirListaVuelos (VAR l: ListaVuelos);
+(* Libera la memoria reservada para la lista 'l'. *)
+
+END ListaVuelos.

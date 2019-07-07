@@ -1,0 +1,72 @@
+DEFINITION MODULE ListaClientes;
+(*******************************************************************************
+Módulo de definicion de ListaClientes.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Cliente   IMPORT Cliente, TIdPasaporte, TIdNacionalidad;
+
+TYPE
+        ListaClientes; (* OPACO *)
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearListaClientes (): ListaClientes;
+(* Crea la lista de clientes vacia. *)
+
+PROCEDURE AgregarClienteListaClientes (c: Cliente; VAR l: ListaClientes);
+(* Precondicion:NOT PerteneceClienteListaClientes(ObtenerPasaporteCliente(c),
+                                                  ObtenerNacionalidadCliente(c),
+                                                  l)
+   Agrega el cliente 'c' al final de la lista 'l' *)
+
+
+(************ Predicados ****************)
+PROCEDURE EsVaciaListaClientes (l: ListaClientes): BOOLEAN;
+(* Devuelve TRUE si la lista 'l' es vacia, FALSE en otro caso. *)
+
+PROCEDURE PerteneceClienteListaClientes (pasaporte: TIdPasaporte; 
+                                         nacionalidad: TIdNacionalidad; 
+                                         l: ListaClientes): BOOLEAN;
+(* Devuelve TRUE si existe un cliente identificado por 'pasaporte, 
+   nacionalidad' en la lista 'l' y FALSE en otro caso.*)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerPrimerClienteListaClientes (l: ListaClientes): Cliente;
+(* Precondicion: NOT EsVaciaListaClientes (l).
+   Devuelve el primer elemento de la lista 'l'. *)
+
+PROCEDURE ObtenerRestoListaClientes (l: ListaClientes): ListaClientes;
+(* Precondicion: NOT EsVaciaListaClientes (l).
+   Devuelve el resto de la lista 'l'. *)
+
+PROCEDURE ObtenerClienteListaClientes (pasaporte: TIdPasaporte; 
+                                       nacionalidad: TIdNacionalidad; 
+                                       l: ListaClientes): Cliente;
+(* Precondicion: PerteneceClienteListaClientes (pasaporte, nacionalidad, l).
+   Devuelve el cliente identificado por 'pasaporte, nacionalidad' de la 
+   lista 'l'. *)
+
+
+
+(*********** Entrada/Salida *************)
+
+PROCEDURE ImprimirListaClientes(l: ListaClientes);
+(* Imprime la informacion de la lista de clientes 'l' en el formato 
+   especificado en la letra. *)
+
+
+(************ Destructoras **************)
+
+
+PROCEDURE DestruirListaClientes (VAR l: ListaClientes);
+(* Libera la memoria reservada para la lista 'l'. *)
+
+END ListaClientes.

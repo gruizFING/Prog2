@@ -1,0 +1,56 @@
+DEFINITION MODULE Hora;
+(*******************************************************************************
+Módulo de definicion de Hora. Hora y minutos en formato 24 horas.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Linea IMPORT THora;
+
+TYPE
+      Hora;      (* OPACO *)
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearHora (h: THora): Hora;
+(* Crea la hora a partir de 'h'. Los dos digitos menos representativos,
+   indican los minutos y el resto son la hora. *)
+
+PROCEDURE CopiaHora (h: Hora): Hora;
+(* Retorna una copia limpia de 'h'. *)
+
+PROCEDURE SumarMinutos (m: CARDINAL; VAR h: Hora);
+(* Suma en forma circular los minutos 'm' a la hora 'h'. Circular en el sentido
+   que si supera las 24, reinicia la hora a 0. Ej: 23:30 + 60 = 00:30. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE HoraToString (h: Hora; VAR s: ARRAY OF CHAR);
+(* Devuelve la hora 'h' en el formato HH:mm en la cadena de caracteres s. *)
+
+
+
+(************ Predicados ****************)
+
+PROCEDURE IgualesHora (h1, h2: Hora): BOOLEAN;
+(* Devuelve TRUE si 'h1' es igual a 'h2', FALSE en otro caso. *)
+
+PROCEDURE EsMenorHora (h1, h2: Hora): BOOLEAN;
+(* Devuelve TRUE si 'h1' es menor a 'h2', FALSE en otro caso. *)
+
+PROCEDURE EsMayorHora (h1, h2: Hora): BOOLEAN;
+(* Devuelve TRUE si 'h1' es mayor a 'h2', FALSE en otro caso. *)
+
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirHora (VAR h: Hora);
+(* Libera la memoria reservada para 'h'. *)
+
+END Hora.

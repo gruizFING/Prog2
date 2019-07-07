@@ -1,0 +1,35 @@
+Bienvenidos a AeroProg2
+version 1.0
+InCo-FIng-UdelaR
+
+>Cliente 1111111-UY ingresado.
+>Cliente 2222222-UY ingresado.
+>Cliente 3333333-UY ingresado.
+>Avion 0 ingresado.
+>Linea linea ingresada.
+>Fecha 20100401 inicializada.
+>Asiento 1-PRIMERA-20100403-linea resevado a 1111111-UY.
+>ERROR: No hay asientos disponibles en PRIMERA-20100403-linea.
+>Asiento 1-TURISTA-20100403-linea resevado a 2222222-UY.
+>Asiento 2-TURISTA-20100403-linea vendido a 3333333-UY.
+Costo: 13-EFECTIVO. Puntos: 1.
+>Reserva 1-PRIMERA-20100403-linea-1111111-UY cancelada.
+>Reserva 1-TURISTA-20100403-linea-2222222-UY cancelada.
+>Asiento 1-TURISTA-20100403-linea resevado a 1111111-UY.
+>Asiento 1-PRIMERA-20100403-linea vendido a 2222222-UY.
+Costo: 20-EFECTIVO. Puntos: 2.
+>Fecha actual 20100402. Reservas liberadas: 1.
+>Fecha actual 20100403. Reservas liberadas: 0.
+>Planilla de Vuelos que Salen Hoy:
+Linea: linea-0-1-2-avion-orig-dest-0000-10-DIARIA.
+Primera:
+Asiento: 1-Cliente: 'nom2'-'ape2'-2222222-UY
+Turista:
+Asiento: 2-Cliente: 'nom3'-'ape3'-3333333-UY
+>Clientes:
+1111111-UY
+2222222-UY
+3333333-UY
+>Lineas:
+linea
+>Fin!

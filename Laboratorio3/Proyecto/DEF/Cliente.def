@@ -1,0 +1,97 @@
+DEFINITION MODULE Cliente;
+(*******************************************************************************
+Módulo de definicion de Cliente.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Historial                IMPORT Historial;
+FROM Linea                    IMPORT TIdLinea, TDuracion;
+FROM Fecha                    IMPORT Fecha;
+FROM MovimientoCliente        IMPORT TEstadoMovimiento;
+FROM Avion                    IMPORT TAsiento;
+
+(*AGREGADO*)
+FROM IOChan                   IMPORT ChanId;
+
+CONST
+        MAX_LARGO_NOM_CLIENTE        = 256;
+        MAX_LARGO_APELL_CLIENTE      = 256;
+        MAX_LARGO_ID_PASAPORTE       = 20;
+        MAX_LARGO_ID_NACIONALIDAD    = 2;
+
+
+TYPE
+        Cliente; (* OPACO *)
+
+        TNomCliente         = ARRAY [0..MAX_LARGO_NOM_CLIENTE] OF CHAR;
+        TApellCliente       = ARRAY [0..MAX_LARGO_APELL_CLIENTE] OF CHAR;
+        TIdPasaporte        = ARRAY [0..MAX_LARGO_ID_PASAPORTE] OF CHAR;
+        TIdNacionalidad     = ARRAY [0..MAX_LARGO_ID_NACIONALIDAD] OF CHAR;
+
+
+        
+(************ Constructoras *************)
+
+PROCEDURE CrearCliente (pais: TIdNacionalidad; pasaporte: TIdPasaporte;
+                        nombre: TNomCliente; apell: TApellCliente): Cliente;
+(* Crea el cliente con los datos pasados como parametro, cero puntos y su
+   historial vacio. *)
+
+PROCEDURE SumarPuntosCliente (p: INTEGER; VAR c: Cliente);
+(* Suma (o resta) los puntos 'p' al cliente; 
+   'p' puede ser positivo o negativo. *)
+
+PROCEDURE EditarMovimiento (lin: TIdLinea; f: Fecha; asiento: TAsiento;
+                dur: TDuracion; estado: TEstadoMovimiento; VAR c:Cliente);
+(* Crea o modifica un movimiento en el historial del cliente 'c'.
+
+   Si 'estado' es M_RESERVA hay que crear un nuevo Movimiento en el Histrial
+   del cliente.
+   Si es M_CANCELA o M_MULTA hay que editar uno que ya estaba.
+   Si es M_COMPRA hay que editar o crear uno nuevo dependiendo si ya existia
+   una reserva o no
+*)
+
+(*AGREGADO, OPCIONAL*)
+PROCEDURE AsignarHistorialCliente(h:Historial; VAR c:Cliente);
+(* Precondición:
+            EsVacioHistorialCliente(ObtenerHistorialCliente(c)) = TRUE
+
+            Asigna el historial h al cliente c.
+*)
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerNacionalidadCliente (c: Cliente): TIdNacionalidad;
+(* Devuelve la nacionalidad del cliente 'c'. *)
+
+PROCEDURE ObtenerPasaporteCliente (c: Cliente): TIdPasaporte;
+(* Devuelve el pasaporte del cliente 'c'. *)
+
+PROCEDURE ObtenerPuntosCliente (c: Cliente): INTEGER;
+(* Devuelve los puntos del cliente 'c'. *)
+
+PROCEDURE ObtenerNombreCliente (c: Cliente): TNomCliente;
+(* Devuelve el nombre del cliente 'c'. *)
+
+PROCEDURE ObtenerApellCliente (c: Cliente): TApellCliente;
+(* Devuelve el apellido del cliente 'c'. *)
+
+PROCEDURE ObtenerHistorialCliente (c: Cliente): Historial;
+(* Devuelve el historial del cliente 'c'. *)
+
+(*********** Entrada/Salida *************)
+
+(*CAMBIA*)
+PROCEDURE ImprimirInfoCliente (cid: ChanId; c: Cliente); 
+(* Precondicion: cid no esta vacio, ya se encuentra inicilizado
+   Imprime en 'cid' los datos del cliente 'c'. *)
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirCliente (VAR c: Cliente);
+(* Libera la memoria reservada para el cliente 'c'. *)
+
+END Cliente.

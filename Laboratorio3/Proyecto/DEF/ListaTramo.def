@@ -1,0 +1,50 @@
+DEFINITION MODULE ListaTramo;
+(*******************************************************************************
+Módulo de definicion de ListaTramo.
+
+Laboratorio de Programación 2.
+InCo-FI-UDELAR
+*******************************************************************************)
+
+FROM Tramo      IMPORT Tramo;
+
+TYPE
+      ListaTramo; (* OPACO *)
+
+
+
+(************ Constructoras *************)
+
+PROCEDURE CrearListaTramo (): ListaTramo;
+(* Crea la lista vacia. *)
+
+PROCEDURE AgregarListaTramo (t: Tramo; VAR l: ListaTramo);
+(* Agrega el tramo 't' al final de la lista 'l'. *)
+
+
+
+(************ Predicados ****************)
+
+PROCEDURE EsVaciaListaTramo (l: ListaTramo): BOOLEAN;
+(* Devuelve TRUE si la lista 'l' es vacia, FALSE en otro caso. *)
+
+
+
+(************ Selectoras ****************)
+
+PROCEDURE ObtenerPrimeroListaTramo (l: ListaTramo): Tramo;
+(* Precondicion: NOT EsVaciaListaTramo (l).
+   Devuelve el primer elemento de la lista 'l'. *)
+
+PROCEDURE ObtenerRestoListaTramo (l: ListaTramo): ListaTramo;
+(* Precondicion: NOT EsVaciaListaTramo (l)
+   Devuelve el resto de la lista 'l'. *)
+
+
+
+(************ Destructoras **************)
+
+PROCEDURE DestruirListaTramo (VAR l: ListaTramo);
+(* Libera la memoria reservada para la lista 'l'. *)
+
+END ListaTramo.

@@ -1,0 +1,17 @@
+0
+0
+4
+Cliente: 'nom1'-'ape1'-1111111-UY-0.
+Movimientos:
+finCliente
+Cliente: 'nom2'-'ape2'-2222222-UY-0.
+Movimientos:
+finCliente
+Cliente: 'nom3'-'ape3'-3333333-UY-0.
+Movimientos:
+finCliente
+Cliente: 'nom4'-'ape4'-4444444-UY-0.
+Movimientos:
+finCliente
+20100416
+0
